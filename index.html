@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,19 @@
 
   <meta
     name="description"
-    content="أدواتي - مجموعة مجانية من الأدوات المفيدة للصور وPDF والحسابات والتحويلات، تعمل مباشرة من المتصفح."
+    content="أدواتي - مجموعة من الأدوات المجانية للصور وملفات PDF والحسابات والتحويلات، تعمل مباشرة من المتصفح."
   >
 
   <meta
     name="keywords"
-    content="أدوات مجانية, أدوات أونلاين, ضغط الصور, PDF, حاسبة, QR Code, تحويل الوحدات"
+    content="أدوات مجانية, أدوات أونلاين, ضغط الصور, تغيير حجم الصور, PDF, حاسبة, QR Code"
   >
 
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#5b5ce2">
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -43,12 +45,14 @@
       margin: auto;
     }
 
+    /* HEADER */
+
     header {
       background: #ffffff;
-      border-bottom: 1px solid #e9e9ef;
+      border-bottom: 1px solid #e8e8ef;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .header-inner {
@@ -56,7 +60,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
     }
 
     .logo {
@@ -65,23 +68,23 @@
       gap: 10px;
       font-size: 25px;
       font-weight: 800;
-      color: #4d4fd7;
+      color: #5051d8;
     }
 
     .logo-icon {
       width: 44px;
       height: 44px;
       border-radius: 13px;
-      display: grid;
-      place-items: center;
       background: #5b5ce2;
       color: white;
+      display: grid;
+      place-items: center;
       font-size: 21px;
     }
 
     nav {
       display: flex;
-      gap: 24px;
+      gap: 25px;
       align-items: center;
     }
 
@@ -98,7 +101,7 @@
     .menu-btn {
       display: none;
       border: none;
-      background: #f0f0ff;
+      background: #eeeeff;
       color: #4d4fd7;
       width: 43px;
       height: 43px;
@@ -107,11 +110,21 @@
       cursor: pointer;
     }
 
+    /* HERO */
+
     .hero {
-      padding: 75px 0 55px;
+      padding: 75px 0 60px;
       background:
-        radial-gradient(circle at 10% 20%, #e4e4ff 0, transparent 28%),
-        radial-gradient(circle at 90% 30%, #e8f5ff 0, transparent 28%),
+        radial-gradient(
+          circle at 10% 20%,
+          #e4e4ff 0,
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 30%,
+          #e8f5ff 0,
+          transparent 28%
+        ),
         #ffffff;
     }
 
@@ -180,16 +193,23 @@
       cursor: pointer;
     }
 
+    /* HERO CARD */
+
     .hero-card {
       min-height: 330px;
       border-radius: 30px;
-      background: linear-gradient(145deg, #5b5ce2, #7a65ed);
+      background: linear-gradient(
+        145deg,
+        #5b5ce2,
+        #7a65ed
+      );
       color: white;
       display: grid;
       place-items: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 25px 60px rgba(91, 92, 226, .25);
+      box-shadow:
+        0 25px 60px rgba(91, 92, 226, .25);
     }
 
     .hero-card::before,
@@ -220,6 +240,8 @@
       z-index: 2;
     }
 
+    /* SECTIONS */
+
     section {
       padding: 70px 0;
     }
@@ -244,6 +266,8 @@
       color: #777;
     }
 
+    /* TOOLS */
+
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -260,7 +284,8 @@
 
     .tool-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(30,30,80,.09);
+      box-shadow:
+        0 15px 35px rgba(30,30,80,.09);
     }
 
     .tool-icon {
@@ -291,6 +316,8 @@
       font-size: 14px;
     }
 
+    /* WHY */
+
     .why {
       background: white;
     }
@@ -320,8 +347,14 @@
       font-size: 14px;
     }
 
+    /* CTA */
+
     .cta-box {
-      background: linear-gradient(135deg, #5051d8, #7661e9);
+      background: linear-gradient(
+        135deg,
+        #5051d8,
+        #7661e9
+      );
       border-radius: 28px;
       padding: 55px 35px;
       text-align: center;
@@ -346,6 +379,8 @@
       border-radius: 12px;
       font-weight: 800;
     }
+
+    /* FOOTER */
 
     footer {
       background: #171827;
@@ -386,6 +421,8 @@
       color: #999;
       font-size: 13px;
     }
+
+    /* MOBILE */
 
     @media (max-width: 850px) {
 
@@ -464,34 +501,65 @@
         font-size: 28px;
       }
     }
+
   </style>
 </head>
 
+
 <body>
 
+
 <header>
+
   <div class="container header-inner">
 
     <a href="index.html" class="logo">
-      <span class="logo-icon">أ</span>
-      <span>أدواتي</span>
+
+      <span class="logo-icon">
+        أ
+      </span>
+
+      <span>
+        أدواتي
+      </span>
+
     </a>
 
-    <button class="menu-btn" id="menuBtn" type="button">
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      type="button"
+    >
       ☰
     </button>
 
+
     <nav id="mainNav">
-      <a href="#tools">الأدوات</a>
-      <a href="#why">لماذا أدواتي؟</a>
-      <a href="#about">عن الموقع</a>
+
+      <a href="#tools">
+        الأدوات
+      </a>
+
+      <a href="#why">
+        لماذا أدواتي؟
+      </a>
+
+      <a href="#about">
+        عن الموقع
+      </a>
+
     </nav>
 
   </div>
+
 </header>
 
 
 <main>
+
+
+  <!-- HERO -->
 
   <section class="hero">
 
@@ -503,15 +571,23 @@
           أدوات مجانية وسهلة
         </span>
 
+
         <h1>
+
           كل الأدوات التي تحتاجها
-          <span>في مكان واحد</span>
+
+          <span>
+            في مكان واحد
+          </span>
+
         </h1>
+
 
         <p>
           استخدم أدوات مفيدة للصور وملفات PDF
           والحسابات والتحويلات مباشرة من المتصفح.
         </p>
+
 
         <div class="search-box">
 
@@ -522,13 +598,18 @@
             aria-label="البحث عن أداة"
           >
 
-          <button type="button" id="searchBtn">
+
+          <button
+            type="button"
+            id="searchBtn"
+          >
             بحث
           </button>
 
         </div>
 
       </div>
+
 
       <div class="hero-card">
 
@@ -543,13 +624,17 @@
   </section>
 
 
+  <!-- TOOLS -->
+
   <section id="tools">
 
     <div class="container">
 
       <div class="section-title">
 
-        <span>أدواتنا</span>
+        <span>
+          أدواتنا
+        </span>
 
         <h2>
           اختر الأداة التي تحتاجها
@@ -562,10 +647,13 @@
       </div>
 
 
-      <div class="tools-grid" id="toolsGrid">
+      <div
+        class="tools-grid"
+        id="toolsGrid"
+      >
 
 
-        <!-- ضغط الصور -->
+        <!-- 1 -->
 
         <a
           href="compress-image.html"
@@ -582,7 +670,7 @@
           </h3>
 
           <p>
-            تقليل حجم الصور مع الحفاظ على جودة مناسبة.
+            قلل حجم الصور بسهولة مع الحفاظ على جودة مناسبة.
           </p>
 
           <span class="tool-link">
@@ -592,10 +680,10 @@
         </a>
 
 
-        <!-- تغيير حجم الصور -->
+        <!-- 2 -->
 
         <a
-          href="#"
+          href="resize-image.html"
           class="tool-card"
           data-name="تغيير حجم الصور"
         >
@@ -609,17 +697,17 @@
           </h3>
 
           <p>
-            غيّر أبعاد الصورة بسهولة من هاتفك أو الكمبيوتر.
+            غيّر عرض وارتفاع الصور بسهولة.
           </p>
 
           <span class="tool-link">
-            قريبًا ←
+            فتح الأداة ←
           </span>
 
         </a>
 
 
-        <!-- تحويل الصور -->
+        <!-- 3 -->
 
         <a
           href="#"
@@ -636,7 +724,7 @@
           </h3>
 
           <p>
-            تحويل الصور بين الصيغ المختلفة.
+            تحويل الصور بين JPG وPNG وWebP.
           </p>
 
           <span class="tool-link">
@@ -646,7 +734,7 @@
         </a>
 
 
-        <!-- دمج PDF -->
+        <!-- 4 -->
 
         <a
           href="#"
@@ -673,7 +761,7 @@
         </a>
 
 
-        <!-- تقسيم PDF -->
+        <!-- 5 -->
 
         <a
           href="#"
@@ -700,7 +788,7 @@
         </a>
 
 
-        <!-- QR -->
+        <!-- 6 -->
 
         <a
           href="#"
@@ -717,7 +805,7 @@
           </h3>
 
           <p>
-            أنشئ رمز QR بسرعة للنصوص والروابط.
+            أنشئ رمز QR للنصوص والروابط بسرعة.
           </p>
 
           <span class="tool-link">
@@ -727,7 +815,7 @@
         </a>
 
 
-        <!-- العمر -->
+        <!-- 7 -->
 
         <a
           href="#"
@@ -754,7 +842,7 @@
         </a>
 
 
-        <!-- النسبة -->
+        <!-- 8 -->
 
         <a
           href="#"
@@ -771,7 +859,7 @@
           </h3>
 
           <p>
-            احسب النسب المئوية بسرعة وسهولة.
+            احسب النسب المئوية بسهولة وسرعة.
           </p>
 
           <span class="tool-link">
@@ -781,7 +869,7 @@
         </a>
 
 
-        <!-- الوحدات -->
+        <!-- 9 -->
 
         <a
           href="#"
@@ -815,13 +903,20 @@
   </section>
 
 
-  <section class="why" id="why">
+  <!-- WHY -->
+
+  <section
+    class="why"
+    id="why"
+  >
 
     <div class="container">
 
       <div class="section-title">
 
-        <span>ببساطة</span>
+        <span>
+          ببساطة
+        </span>
 
         <h2>
           لماذا أدواتي؟
@@ -831,6 +926,7 @@
 
 
       <div class="why-grid">
+
 
         <div class="why-card">
 
@@ -877,8 +973,7 @@
           </h3>
 
           <p>
-            الأدوات التي يمكن تشغيلها داخل المتصفح
-            تتم معالجتها محليًا قدر الإمكان.
+            الأدوات التي تعمل داخل المتصفح تتم معالجتها محليًا قدر الإمكان.
           </p>
 
         </div>
@@ -889,6 +984,8 @@
 
   </section>
 
+
+  <!-- ABOUT -->
 
   <section id="about">
 
@@ -901,10 +998,13 @@
         </h2>
 
         <p>
-          نعمل على إضافة أدوات جديدة باستمرار.
+          نعمل على إضافة أدوات جديدة ومفيدة باستمرار.
         </p>
 
-        <a href="#tools" class="cta-button">
+        <a
+          href="#tools"
+          class="cta-button"
+        >
           تصفح الأدوات
         </a>
 
@@ -914,14 +1014,18 @@
 
   </section>
 
+
 </main>
 
+
+<!-- FOOTER -->
 
 <footer>
 
   <div class="container">
 
     <div class="footer-grid">
+
 
       <div>
 
@@ -947,12 +1051,12 @@
           ضغط الصور
         </a>
 
-        <a href="#tools">
-          أدوات PDF
+        <a href="resize-image.html">
+          تغيير حجم الصور
         </a>
 
         <a href="#tools">
-          الحاسبات
+          جميع الأدوات
         </a>
 
       </div>
@@ -978,11 +1082,14 @@
 
       </div>
 
+
     </div>
 
 
     <div class="copyright">
+
       © 2026 أدواتي — جميع الحقوق محفوظة
+
     </div>
 
   </div>
@@ -1022,29 +1129,34 @@
   function searchTools() {
 
     const value =
-      searchInput.value.trim().toLowerCase();
+      searchInput.value
+        .trim()
+        .toLowerCase();
 
 
-    cards.forEach(function(card) {
+    cards.forEach(
+      function(card) {
 
-      const name =
-        card.dataset.name.toLowerCase();
+        const name =
+          card.dataset.name
+            .toLowerCase();
 
 
-      if (
-        value === "" ||
-        name.includes(value)
-      ) {
+        if (
+          value === "" ||
+          name.includes(value)
+        ) {
 
-        card.style.display = "";
+          card.style.display = "";
 
-      } else {
+        } else {
 
-        card.style.display = "none";
+          card.style.display = "none";
+
+        }
 
       }
-
-    });
+    );
 
 
     document
@@ -1073,7 +1185,28 @@
     }
   );
 
+
+  document
+    .querySelectorAll("nav a")
+    .forEach(
+      function(link) {
+
+        link.addEventListener(
+          "click",
+          function() {
+
+            mainNav.classList.remove(
+              "active"
+            );
+
+          }
+        );
+
+      }
+    );
+
 </script>
+
 
 </body>
 </html>
