@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>شروط الاستخدام | أدواتي</title>
+
+  <meta name="description"
+        content="شروط وأحكام استخدام موقع أدواتي والأدوات المجانية التي يقدمها.">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.9;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e8ebf2;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #2563eb;
+      font-size: 27px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    nav a {
+      padding: 9px 14px;
+      border-radius: 10px;
+      color: #4b5563;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 23px;
+      width: 44px;
+      height: 42px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 55px 20px 80px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      color: #667085;
+    }
+
+    .content {
+      background: white;
+      border: 1px solid #e8ebf2;
+      border-radius: 22px;
+      padding: 35px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .content section {
+      margin-bottom: 30px;
+    }
+
+    .content section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      color: #111827;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-right: 25px;
+      color: #4b5563;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .notice {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 17px;
+      color: #1e40af;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer-inner a {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    @media (max-width: 650px) {
+
+      .header-inner {
+        padding: 13px 15px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+
+        position: absolute;
+        top: 68px;
+        right: 12px;
+        left: 12px;
+
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 15px;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        text-align: center;
+      }
+
+      main {
+        padding: 40px 15px 60px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .content {
+        padding: 23px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+    <a href="index.html" class="logo">
+      أدواتي
+    </a>
+
+    <button class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="فتح القائمة">
+      ☰
+    </button>
+
+    <nav id="mainNav">
+
+      <a href="index.html">
+        الرئيسية
+      </a>
+
+      <a href="index.html#tools">
+        الأدوات
+      </a>
+
+      <a href="index.html#about">
+        عن الموقع
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <div class="page-header">
+
+    <span class="badge">
+      الشروط والأحكام
+    </span>
+
+    <h1>
+      شروط الاستخدام
+    </h1>
+
+    <p>
+      يرجى قراءة هذه الشروط قبل استخدام موقع أدواتي.
+    </p>
+
+  </div>
+
+
+  <article class="content">
+
+
+    <section>
+
+      <h2>
+        1. قبول الشروط
+      </h2>
+
+      <p>
+        باستخدامك لموقع أدواتي أو أي من الأدوات المتوفرة فيه،
+        فإنك توافق على الالتزام بشروط الاستخدام الموضحة في هذه الصفحة.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        2. استخدام الموقع
+      </h2>
+
+      <p>
+        تم توفير موقع أدواتي لمساعدة المستخدمين على تنفيذ مجموعة
+        من المهام الرقمية البسيطة من خلال أدوات مجانية عبر الإنترنت.
+      </p>
+
+      <p>
+        يلتزم المستخدم باستخدام الموقع بطريقة قانونية وعدم استخدامه
+        لأي غرض يخالف القوانين أو الأنظمة المعمول بها.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        3. الأدوات والخدمات
+      </h2>
+
+      <p>
+        قد تختلف طريقة عمل الأدوات بحسب نوع الأداة والمتصفح والجهاز
+        المستخدم.
+      </p>
+
+      <p>
+        قد تتم معالجة بعض الملفات والبيانات مباشرة داخل متصفح المستخدم،
+        بينما قد تعتمد بعض الخدمات المستقبلية على خدمات خارجية.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        4. الملفات التي يرفعها المستخدم
+      </h2>
+
+      <p>
+        يتحمل المستخدم مسؤولية الملفات والمحتوى الذي يستخدمه
+        مع أدوات الموقع.
+      </p>
+
+      <p>
+        يجب عدم استخدام الموقع لمعالجة أو مشاركة محتوى غير قانوني
+        أو محتوى ينتهك حقوق الآخرين.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        5. دقة النتائج
+      </h2>
+
+      <p>
+        تم تطوير الأدوات لتقديم نتائج مفيدة، ولكن لا نضمن أن تكون
+        النتائج مناسبة لجميع الاستخدامات أو خالية من الأخطاء في كل حالة.
+      </p>
+
+      <p>
+        يجب على المستخدم التحقق من النتائج قبل استخدامها في القرارات
+        أو العمليات التي تتطلب دقة عالية.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        6. توفر الموقع
+      </h2>
+
+      <p>
+        نسعى إلى إبقاء الموقع والأدوات متاحة قدر الإمكان،
+        ولكن قد تحدث فترات توقف بسبب الصيانة أو مشاكل تقنية
+        أو أسباب خارجة عن السيطرة.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        7. الروابط والخدمات الخارجية
+      </h2>
+
+      <p>
+        قد يحتوي الموقع على روابط أو خدمات تابعة لأطراف خارجية.
+        استخدام هذه الخدمات يخضع لشروط وسياسات الجهات المالكة لها.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        8. الملكية الفكرية
+      </h2>
+
+      <p>
+        تصميم موقع أدواتي ومحتواه وعناصره البرمجية، ما لم يذكر خلاف ذلك،
+        مملوكة لإدارة الموقع أو مستخدمة وفق الحقوق والتراخيص المناسبة.
+      </p>
+
+      <p>
+        لا يجوز نسخ أو إعادة نشر أجزاء من الموقع بطريقة تخالف الحقوق
+        القانونية أو حقوق الملكية الفكرية.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        9. التعديلات على الموقع
+      </h2>
+
+      <p>
+        نحتفظ بالحق في إضافة أو تعديل أو إزالة الأدوات والميزات
+        والمحتوى في أي وقت بهدف تطوير الموقع وتحسين خدماته.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        10. تعديل شروط الاستخدام
+      </h2>
+
+      <p>
+        قد يتم تحديث شروط الاستخدام عند الحاجة.
+        استمرارك في استخدام الموقع بعد نشر التعديلات يعني اطلاعك
+        على الشروط المحدثة واستخدام الموقع وفقها.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        11. التواصل
+      </h2>
+
+      <p>
+        للاستفسارات المتعلقة بشروط الاستخدام يمكنك التواصل مع إدارة الموقع.
+      </p>
+
+      <p>
+        البريد الإلكتروني:
+        <strong>ahmadmsoub130@gmail.com</strong>
+      </p>
+
+    </section>
+
+
+    <div class="notice">
+
+      آخر تحديث:
+      سبتمبر 2026
+
+    </div>
+
+
+  </article>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      © 2026 أدواتي - جميع الحقوق محفوظة
+    </div>
+
+    <div style="margin-top:8px;">
+
+      <a href="index.html">
+        العودة إلى الصفحة الرئيسية
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+  document
+    .getElementById("mainNav")
+    .classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+
+</html>
