@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>تغيير حجم الصور أونلاين مجانًا | أدواتي</title>
+
+  <meta
+    name="description"
+    content="غيّر حجم الصور أونلاين مجانًا. حدد العرض والارتفاع وحمّل الصورة بالحجم الجديد مباشرة من المتصفح."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#5b5ce2">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f6f7fb;
+      color: #202124;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1000px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e8e8ef;
+    }
+
+    .header-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #5051d8;
+    }
+
+    .logo-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #5b5ce2;
+      color: #fff;
+      display: grid;
+      place-items: center;
+    }
+
+    .back-link {
+      color: #5b5ce2;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 55px 0 80px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .page-title span {
+      color: #5b5ce2;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .page-title h1 {
+      font-size: clamp(30px, 6vw, 48px);
+      margin: 5px 0 10px;
+    }
+
+    .page-title p {
+      color: #707070;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .tool-box {
+      background: #fff;
+      border: 1px solid #e5e5ec;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 15px 45px rgba(30, 30, 80, .07);
+    }
+
+    .upload-area {
+      border: 2px dashed #b9b9e8;
+      background: #f7f7ff;
+      border-radius: 20px;
+      padding: 45px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .upload-area:hover {
+      background: #f0f0ff;
+    }
+
+    .upload-icon {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .upload-area h2 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .upload-area p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    #fileInput {
+      display: none;
+    }
+
+    .controls {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .dimensions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .input-group input {
+      width: 100%;
+      border: 1px solid #dddde7;
+      border-radius: 12px;
+      padding: 13px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border-color: #5b5ce2;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin: 15px 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .checkbox-row input {
+      width: 18px;
+      height: 18px;
+      accent-color: #5b5ce2;
+    }
+
+    .format-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .format-select {
+      width: 100%;
+      border: 1px solid #dddde7;
+      border-radius: 12px;
+      padding: 13px;
+      font-size: 16px;
+      background: #fff;
+      outline: none;
+    }
+
+    .button {
+      width: 100%;
+      border: none;
+      background: #5b5ce2;
+      color: #fff;
+      padding: 14px;
+      border-radius: 13px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .button:hover {
+      opacity: .92;
+    }
+
+    .button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .result {
+      display: none;
+      margin-top: 30px;
+    }
+
+    .result-card {
+      border: 1px solid #e8e8ef;
+      border-radius: 18px;
+      padding: 20px;
+      background: #fafaff;
+    }
+
+    .result-card h3 {
+      margin-bottom: 15px;
+    }
+
+    .preview {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #eee;
+    }
+
+    .info {
+      margin-top: 30px;
+      padding: 22px;
+      background: #fff;
+      border: 1px solid #e5e5ec;
+      border-radius: 18px;
+    }
+
+    .info h2 {
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .download {
+      display: block;
+      text-align: center;
+      background: #202124;
+      color: #fff;
+      padding: 14px;
+      border-radius: 13px;
+      margin-top: 20px;
+      font-weight: 800;
+    }
+
+    .dimensions-result {
+      margin-top: 15px;
+      padding: 13px;
+      background: #eeeeff;
+      border-radius: 12px;
+      color: #4e4fcf;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    footer {
+      background: #171827;
+      color: #bbb;
+      padding: 25px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+
+      .tool-box {
+        padding: 18px;
+      }
+
+      .dimensions {
+        grid-template-columns: 1fr;
+      }
+
+      .upload-area {
+        padding: 35px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+
+    <a href="index.html" class="logo">
+      <span class="logo-icon">أ</span>
+      <span>أدواتي</span>
+    </a>
+
+    <a href="index.html" class="back-link">
+      ← الرئيسية
+    </a>
+
+  </div>
+</header>
+
+
+<main>
+
+  <div class="container">
+
+    <div class="page-title">
+
+      <span>أداة مجانية</span>
+
+      <h1>
+        تغيير حجم الصور أونلاين
+      </h1>
+
+      <p>
+        غيّر عرض وارتفاع الصور بسهولة من هاتفك أو الكمبيوتر
+        وحمّل الصورة بالحجم الجديد مباشرة.
+      </p>
+
+    </div>
+
+
+    <div class="tool-box">
+
+      <label class="upload-area" for="fileInput">
+
+        <div class="upload-icon">
+          📐
+        </div>
+
+        <h2>
+          اختر صورة
+        </h2>
+
+        <p>
+          JPG أو PNG أو WebP
+        </p>
+
+      </label>
+
+
+      <input
+        type="file"
+        id="fileInput"
+        accept="image/jpeg,image/png,image/webp"
+      >
+
+
+      <div class="controls" id="controls">
+
+        <div class="dimensions">
+
+          <div class="input-group">
+
+            <label for="width">
+              العرض بالبكسل
+            </label>
+
+            <input
+              type="number"
+              id="width"
+              min="1"
+              placeholder="العرض"
+            >
+
+          </div>
+
+
+          <div class="input-group">
+
+            <label for="height">
+              الارتفاع بالبكسل
+            </label>
+
+            <input
+              type="number"
+              id="height"
+              min="1"
+              placeholder="الارتفاع"
+            >
+
+          </div>
+
+        </div>
+
+
+        <label class="checkbox-row">
+
+          <input
+            type="checkbox"
+            id="keepRatio"
+            checked
+          >
+
+          <span>
+            الحفاظ على تناسب الصورة
+          </span>
+
+        </label>
+
+
+        <div class="format-title">
+          صيغة الصورة
+        </div>
+
+        <select id="format" class="format-select">
+
+          <option value="image/jpeg">
+            JPG
+          </option>
+
+          <option value="image/png">
+            PNG
+          </option>
+
+          <option value="image/webp">
+            WebP
+          </option>
+
+        </select>
+
+
+        <button
+          class="button"
+          id="resizeButton"
+          type="button"
+        >
+          تغيير حجم الصورة
+        </button>
+
+      </div>
+
+
+      <div class="result" id="result">
+
+        <div class="result-card">
+
+          <h3>
+            الصورة بالحجم الجديد
+          </h3>
+
+          <img
+            id="preview"
+            class="preview"
+            alt="الصورة بالحجم الجديد"
+          >
+
+          <div
+            class="dimensions-result"
+            id="dimensionsResult"
+          ></div>
+
+          <a
+            href="#"
+            id="downloadButton"
+            class="download"
+            download="adawati-resized-image.jpg"
+          >
+            تحميل الصورة
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="info">
+
+      <h2>
+        كيف تعمل الأداة؟
+      </h2>
+
+      <p>
+        اختر الصورة من جهازك، ثم أدخل العرض والارتفاع المطلوبين.
+        يمكنك الحفاظ على تناسب الصورة أو تغييره حسب رغبتك.
+        تتم معالجة الصورة مباشرة داخل المتصفح ولا يتم رفعها إلى خادم خارجي.
+      </p>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+  © 2026 أدواتي — جميع الحقوق محفوظة
+</footer>
+
+
+<script>
+
+  const fileInput =
+    document.getElementById("fileInput");
+
+  const controls =
+    document.getElementById("controls");
+
+  const widthInput =
+    document.getElementById("width");
+
+  const heightInput =
+    document.getElementById("height");
+
+  const keepRatio =
+    document.getElementById("keepRatio");
+
+  const format =
+    document.getElementById("format");
+
+  const resizeButton =
+    document.getElementById("resizeButton");
+
+  const result =
+    document.getElementById("result");
+
+  const preview =
+    document.getElementById("preview");
+
+  const dimensionsResult =
+    document.getElementById("dimensionsResult");
+
+  const downloadButton =
+    document.getElementById("downloadButton");
+
+
+  let selectedFile = null;
+  let originalWidth = 0;
+  let originalHeight = 0;
+  let currentDownloadUrl = null;
+
+
+  fileInput.addEventListener(
+    "change",
+    function () {
+
+      const file = fileInput.files[0];
+
+      if (!file) {
+        return;
+      }
+
+
+      if (!file.type.startsWith("image/")) {
+
+        alert("يرجى اختيار ملف صورة صالح.");
+
+        fileInput.value = "";
+
+        return;
+      }
+
+
+      selectedFile = file;
+
+
+      const image = new Image();
+
+      image.onload = function () {
+
+        originalWidth = image.width;
+        originalHeight = image.height;
+
+
+        widthInput.value =
+          originalWidth;
+
+        heightInput.value =
+          originalHeight;
+
+
+        controls.style.display =
+          "block";
+
+        result.style.display =
+          "none";
+
+
+        URL.revokeObjectURL(
+          image.src
+        );
+
+      };
+
+
+      image.onerror = function () {
+
+        alert("تعذر قراءة الصورة.");
+
+      };
+
+
+      image.src =
+        URL.createObjectURL(file);
+
+    }
+  );
+
+
+  widthInput.addEventListener(
+    "input",
+    function () {
+
+      if (
+        !keepRatio.checked ||
+        !originalWidth ||
+        !originalHeight
+      ) {
+        return;
+      }
+
+
+      const newWidth =
+        Number(widthInput.value);
+
+
+      if (!newWidth) {
+        return;
+      }
+
+
+      const newHeight =
+        Math.round(
+          newWidth *
+          originalHeight /
+          originalWidth
+        );
+
+
+      heightInput.value =
+        newHeight;
+
+    }
+  );
+
+
+  heightInput.addEventListener(
+    "input",
+    function () {
+
+      if (
+        !keepRatio.checked ||
+        !originalWidth ||
+        !originalHeight
+      ) {
+        return;
+      }
+
+
+      const newHeight =
+        Number(heightInput.value);
+
+
+      if (!newHeight) {
+        return;
+      }
+
+
+      const newWidth =
+        Math.round(
+          newHeight *
+          originalWidth /
+          originalHeight
+        );
+
+
+      widthInput.value =
+        newWidth;
+
+    }
+  );
+
+
+  resizeButton.addEventListener(
+    "click",
+    function () {
+
+      if (!selectedFile) {
+
+        alert("اختر صورة أولًا.");
+
+        return;
+      }
+
+
+      const newWidth =
+        Number(widthInput.value);
+
+      const newHeight =
+        Number(heightInput.value);
+
+
+      if (
+        !newWidth ||
+        !newHeight ||
+        newWidth < 1 ||
+        newHeight < 1
+      ) {
+
+        alert(
+          "أدخل عرضًا وارتفاعًا صحيحين."
+        );
+
+        return;
+      }
+
+
+      if (
+        newWidth > 10000 ||
+        newHeight > 10000
+      ) {
+
+        alert(
+          "الحد الأقصى للأبعاد هو 10000 بكسل."
+        );
+
+        return;
+      }
+
+
+      resizeButton.disabled =
+        true;
+
+      resizeButton.textContent =
+        "جاري تغيير الحجم...";
+
+
+      const image =
+        new Image();
+
+
+      image.onload =
+        function () {
+
+          const canvas =
+            document.createElement("canvas");
+
+
+          const ctx =
+            canvas.getContext("2d");
+
+
+          canvas.width =
+            newWidth;
+
+          canvas.height =
+            newHeight;
+
+
+          ctx.imageSmoothingEnabled =
+            true;
+
+          ctx.imageSmoothingQuality =
+            "high";
+
+
+          ctx.drawImage(
+            image,
+            0,
+            0,
+            newWidth,
+            newHeight
+          );
+
+
+          const selectedFormat =
+            format.value;
+
+
+          const quality =
+            selectedFormat === "image/png"
+              ? undefined
+              : 0.92;
+
+
+          canvas.toBlob(
+            function (blob) {
+
+              if (!blob) {
+
+                alert(
+                  "تعذر إنشاء الصورة الجديدة."
+                );
+
+                resizeButton.disabled =
+                  false;
+
+                resizeButton.textContent =
+                  "تغيير حجم الصورة";
+
+                return;
+              }
+
+
+              if (currentDownloadUrl) {
+
+                URL.revokeObjectURL(
+                  currentDownloadUrl
+                );
+
+              }
+
+
+              currentDownloadUrl =
+                URL.createObjectURL(blob);
+
+
+              preview.src =
+                currentDownloadUrl;
+
+
+              dimensionsResult.textContent =
+                "الأبعاد الجديدة: " +
+                newWidth +
+                " × " +
+                newHeight +
+                " بكسل";
+
+
+              downloadButton.href =
+                currentDownloadUrl;
+
+
+              if (
+                selectedFormat ===
+                "image/png"
+              ) {
+
+                downloadButton.download =
+                  "adawati-resized-image.png";
+
+              } else if (
+                selectedFormat ===
+                "image/webp"
+              ) {
+
+                downloadButton.download =
+                  "adawati-resized-image.webp";
+
+              } else {
+
+                downloadButton.download =
+                  "adawati-resized-image.jpg";
+
+              }
+
+
+              result.style.display =
+                "block";
+
+
+              resizeButton.disabled =
+                false;
+
+              resizeButton.textContent =
+                "تغيير حجم الصورة";
+
+
+              URL.revokeObjectURL(
+                image.src
+              );
+
+            },
+
+            selectedFormat,
+
+            quality
+
+          );
+
+        };
+
+
+      image.onerror =
+        function () {
+
+          alert(
+            "تعذر قراءة الصورة."
+          );
+
+          resizeButton.disabled =
+            false;
+
+          resizeButton.textContent =
+            "تغيير حجم الصورة";
+
+        };
+
+
+      image.src =
+        URL.createObjectURL(
+          selectedFile
+        );
+
+    }
+  );
+
+</script>
+
+</body>
+</html>
