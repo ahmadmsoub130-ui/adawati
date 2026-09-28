@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>حاسبة النسبة المئوية | أدواتي</title>
+
+  <meta name="description"
+    content="احسب النسبة المئوية بسهولة. احسب نسبة رقم من رقم، الزيادة والنقصان، وإضافة أو خصم نسبة مئوية مجانًا.">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #2563eb;
+      font-size: 26px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      color: #374151;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
+
+    .breadcrumb {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .breadcrumb a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .hero p {
+      color: #64748b;
+      font-size: 17px;
+    }
+
+    .calculator {
+      background: #fff;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, .08);
+    }
+
+    .calculator-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .calculator-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .calculator-card h2 {
+      font-size: 21px;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .calculator-card > p {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      height: 50px;
+      border: 1px solid #dbe1ea;
+      border-radius: 12px;
+      padding: 0 13px;
+      font-size: 16px;
+      outline: none;
+      font-family: inherit;
+    }
+
+    input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+    }
+
+    .calc-btn {
+      width: 100%;
+      margin-top: 18px;
+      border: 0;
+      border-radius: 13px;
+      padding: 14px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .calc-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .result {
+      display: none;
+      margin-top: 18px;
+      padding: 16px;
+      background: #eff6ff;
+      border-radius: 13px;
+      text-align: center;
+      color: #1d4ed8;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .error {
+      display: none;
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+      text-align: center;
+    }
+
+    .info {
+      margin-top: 25px;
+      background: #f8fafc;
+      border-radius: 15px;
+      padding: 20px;
+      color: #475569;
+      line-height: 1.9;
+    }
+
+    footer {
+      margin-top: 60px;
+      background: #111827;
+      color: #cbd5e1;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 650px) {
+
+      .container {
+        margin: 30px auto;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .calculator {
+        padding: 18px;
+      }
+
+      .calculator-card {
+        padding: 18px;
+      }
+
+      .inputs {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+    <a href="index.html" class="logo">
+      أدواتي
+    </a>
+
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="index.html#tools">الأدوات</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main class="container">
+
+  <div class="breadcrumb">
+    <a href="index.html">أدواتي</a>
+    &nbsp; / &nbsp;
+    حساب النسبة المئوية
+  </div>
+
+
+  <section class="hero">
+
+    <h1>
+      حاسبة النسبة المئوية
+    </h1>
+
+    <p>
+      احسب النسب المئوية والزيادة والنقصان وإضافة أو خصم النسبة بسهولة.
+    </p>
+
+  </section>
+
+
+  <section class="calculator">
+
+
+    <!-- 1 -->
+
+    <div class="calculator-card">
+
+      <h2>
+        كم تساوي نسبة من رقم؟
+      </h2>
+
+      <p>
+        مثال: كم تساوي 20% من 500؟
+      </p>
+
+      <div class="inputs">
+
+        <div class="input-group">
+
+          <label for="percent1">
+            النسبة %
+          </label>
+
+          <input
+            type="number"
+            id="percent1"
+            placeholder="20"
+            step="any"
+          >
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="number1">
+            الرقم
+          </label>
+
+          <input
+            type="number"
+            id="number1"
+            placeholder="500"
+            step="any"
+          >
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="calc-btn"
+        onclick="calculatePercentOfNumber()"
+      >
+        احسب
+      </button>
+
+
+      <div
+        class="result"
+        id="result1"
+      ></div>
+
+    </div>
+
+
+    <!-- 2 -->
+
+    <div class="calculator-card">
+
+      <h2>
+        الرقم الأول يمثل كم بالمئة من الرقم الثاني؟
+      </h2>
+
+      <p>
+        مثال: 50 من 200 تساوي 25%.
+      </p>
+
+      <div class="inputs">
+
+        <div class="input-group">
+
+          <label for="number2">
+            الرقم الأول
+          </label>
+
+          <input
+            type="number"
+            id="number2"
+            placeholder="50"
+            step="any"
+          >
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="number3">
+            الرقم الثاني
+          </label>
+
+          <input
+            type="number"
+            id="number3"
+            placeholder="200"
+            step="any"
+          >
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="calc-btn"
+        onclick="calculatePercentage()"
+      >
+        احسب
+      </button>
+
+
+      <div
+        class="result"
+        id="result2"
+      ></div>
+
+    </div>
+
+
+    <!-- 3 -->
+
+    <div class="calculator-card">
+
+      <h2>
+        نسبة الزيادة أو النقصان
+      </h2>
+
+      <p>
+        احسب مقدار التغير بالنسبة المئوية بين رقمين.
+      </p>
+
+      <div class="inputs">
+
+        <div class="input-group">
+
+          <label for="oldValue">
+            القيمة القديمة
+          </label>
+
+          <input
+            type="number"
+            id="oldValue"
+            placeholder="100"
+            step="any"
+          >
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="newValue">
+            القيمة الجديدة
+          </label>
+
+          <input
+            type="number"
+            id="newValue"
+            placeholder="120"
+            step="any"
+          >
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="calc-btn"
+        onclick="calculateChange()"
+      >
+        احسب التغير
+      </button>
+
+
+      <div
+        class="result"
+        id="result3"
+      ></div>
+
+    </div>
+
+
+    <!-- 4 -->
+
+    <div class="calculator-card">
+
+      <h2>
+        إضافة أو خصم نسبة من رقم
+      </h2>
+
+      <p>
+        احسب الرقم بعد إضافة نسبة مئوية أو خصمها.
+      </p>
+
+      <div class="inputs">
+
+        <div class="input-group">
+
+          <label for="baseValue">
+            الرقم
+          </label>
+
+          <input
+            type="number"
+            id="baseValue"
+            placeholder="1000"
+            step="any"
+          >
+
+        </div>
+
+
+        <div class="input-group">
+
+          <label for="changePercent">
+            النسبة %
+          </label>
+
+          <input
+            type="number"
+            id="changePercent"
+            placeholder="15"
+            step="any"
+          >
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="calc-btn"
+        onclick="calculateAddSubtract()"
+      >
+        احسب
+      </button>
+
+
+      <div
+        class="result"
+        id="result4"
+      ></div>
+
+    </div>
+
+
+    <div class="info">
+
+      <strong>
+        طريقة الاستخدام:
+      </strong>
+
+      <br>
+
+      أدخل الأرقام المطلوبة في العملية التي تريد حسابها،
+      ثم اضغط زر «احسب». جميع العمليات تتم مباشرة داخل المتصفح.
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <p>
+    © 2026
+    <a href="index.html">أدواتي</a>
+    — جميع الحقوق محفوظة
+  </p>
+
+</footer>
+
+
+<script>
+
+  function formatNumber(number) {
+
+    return Number(number).toLocaleString(
+      "ar",
+      {
+        maximumFractionDigits: 8
+      }
+    );
+
+  }
+
+
+  function showResult(id, text) {
+
+    const result =
+      document.getElementById(id);
+
+    result.textContent = text;
+
+    result.style.display = "block";
+
+  }
+
+
+  function calculatePercentOfNumber() {
+
+    const percent =
+      parseFloat(
+        document.getElementById("percent1").value
+      );
+
+    const number =
+      parseFloat(
+        document.getElementById("number1").value
+      );
+
+
+    if (
+      Number.isNaN(percent) ||
+      Number.isNaN(number)
+    ) {
+
+      alert("أدخل النسبة والرقم أولًا.");
+
+      return;
+
+    }
+
+
+    const result =
+      (percent / 100) * number;
+
+
+    showResult(
+      "result1",
+      formatNumber(percent) +
+      "% من " +
+      formatNumber(number) +
+      " = " +
+      formatNumber(result)
+    );
+
+  }
+
+
+  function calculatePercentage() {
+
+    const first =
+      parseFloat(
+        document.getElementById("number2").value
+      );
+
+    const second =
+      parseFloat(
+        document.getElementById("number3").value
+      );
+
+
+    if (
+      Number.isNaN(first) ||
+      Number.isNaN(second)
+    ) {
+
+      alert("أدخل الرقمين أولًا.");
+
+      return;
+
+    }
+
+
+    if (second === 0) {
+
+      alert("لا يمكن القسمة على صفر.");
+
+      return;
+
+    }
+
+
+    const result =
+      (first / second) * 100;
+
+
+    showResult(
+      "result2",
+      formatNumber(first) +
+      " من " +
+      formatNumber(second) +
+      " = " +
+      formatNumber(result) +
+      "%"
+    );
+
+  }
+
+
+  function calculateChange() {
+
+    const oldValue =
+      parseFloat(
+        document.getElementById("oldValue").value
+      );
+
+    const newValue =
+      parseFloat(
+        document.getElementById("newValue").value
+      );
+
+
+    if (
+      Number.isNaN(oldValue) ||
+      Number.isNaN(newValue)
+    ) {
+
+      alert("أدخل القيمتين أولًا.");
+
+      return;
+
+    }
+
+
+    if (oldValue === 0) {
+
+      alert("القيمة القديمة لا يمكن أن تكون صفرًا.");
+
+      return;
+
+    }
+
+
+    const change =
+      ((newValue - oldValue) / Math.abs(oldValue)) * 100;
+
+
+    if (change > 0) {
+
+      showResult(
+        "result3",
+        "زيادة بنسبة " +
+        formatNumber(Math.abs(change)) +
+        "%"
+      );
+
+    } else if (change < 0) {
+
+      showResult(
+        "result3",
+        "نقصان بنسبة " +
+        formatNumber(Math.abs(change)) +
+        "%"
+      );
+
+    } else {
+
+      showResult(
+        "result3",
+        "لا يوجد تغيير — 0%"
+      );
+
+    }
+
+  }
+
+
+  function calculateAddSubtract() {
+
+    const base =
+      parseFloat(
+        document.getElementById("baseValue").value
+      );
+
+    const percent =
+      parseFloat(
+        document.getElementById("changePercent").value
+      );
+
+
+    if (
+      Number.isNaN(base) ||
+      Number.isNaN(percent)
+    ) {
+
+      alert("أدخل الرقم والنسبة أولًا.");
+
+      return;
+
+    }
+
+
+    const amount =
+      (base * percent) / 100;
+
+
+    const added =
+      base + amount;
+
+
+    const subtracted =
+      base - amount;
+
+
+    showResult(
+      "result4",
+      "قيمة النسبة: " +
+      formatNumber(amount) +
+      " — بعد الإضافة: " +
+      formatNumber(added) +
+      " — بعد الخصم: " +
+      formatNumber(subtracted)
+    );
+
+  }
+
+</script>
+
+</body>
+
+</html>
