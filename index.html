@@ -9,7 +9,7 @@
 
   <meta
     name="description"
-    content="أدواتي منصة عربية مجانية للأدوات المفيدة أونلاين مثل ضغط الصور وتغيير حجمها وتحويل الصور ودمج ملفات PDF."
+    content="أدواتي منصة عربية مجانية للأدوات المفيدة أونلاين مثل ضغط الصور وتغيير حجمها وتحويلها ودمج وتقسيم ملفات PDF."
   >
 
   <meta name="robots" content="index, follow">
@@ -455,15 +455,8 @@
   <div class="container header-inner">
 
     <a href="index.html" class="logo">
-
-      <span class="logo-icon">
-        أ
-      </span>
-
-      <span>
-        أدواتي
-      </span>
-
+      <span class="logo-icon">أ</span>
+      <span>أدواتي</span>
     </a>
 
 
@@ -506,20 +499,16 @@
       أدوات مجانية وسهلة الاستخدام
     </div>
 
-
     <h1>
       كل الأدوات التي تحتاجها
       <br>
       في <span>مكان واحد</span>
     </h1>
 
-
     <p>
       أدواتي منصة عربية توفر لك مجموعة من الأدوات
-      المفيدة التي تعمل مباشرة من المتصفح
-      بدون تعقيد.
+      المفيدة التي تعمل مباشرة من المتصفح بدون تعقيد.
     </p>
-
 
     <a
       href="#tools"
@@ -580,14 +569,13 @@
     </div>
 
 
-
     <div
       class="tools-grid"
       id="toolsGrid"
     >
 
 
-      <!-- ضغط الصور -->
+      <!-- 1 -->
 
       <a
         href="compress-image.html"
@@ -615,8 +603,7 @@
       </a>
 
 
-
-      <!-- تغيير حجم الصور -->
+      <!-- 2 -->
 
       <a
         href="resize-image.html"
@@ -644,8 +631,7 @@
       </a>
 
 
-
-      <!-- تحويل الصور -->
+      <!-- 3 -->
 
       <a
         href="convert-image.html"
@@ -673,8 +659,7 @@
       </a>
 
 
-
-      <!-- دمج PDF -->
+      <!-- 4 -->
 
       <a
         href="merge-pdf.html"
@@ -702,11 +687,11 @@
       </a>
 
 
+      <!-- 5 -->
 
-      <!-- تقسيم PDF -->
-
-      <div
-        class="tool-card coming"
+      <a
+        href="split-pdf.html"
+        class="tool-card"
         data-name="تقسيم PDF"
       >
 
@@ -719,18 +704,18 @@
         </h3>
 
         <p>
-          استخرج الصفحات التي تحتاجها من ملفات PDF.
+          استخرج الصفحات التي تحتاجها من ملف PDF
+          واحفظها في ملف جديد.
         </p>
 
         <span class="tool-link">
-          قريبًا
+          ابدأ الآن ←
         </span>
 
-      </div>
+      </a>
 
 
-
-      <!-- QR -->
+      <!-- 6 -->
 
       <div
         class="tool-card coming"
@@ -756,8 +741,7 @@
       </div>
 
 
-
-      <!-- العمر -->
+      <!-- 7 -->
 
       <div
         class="tool-card coming"
@@ -783,8 +767,7 @@
       </div>
 
 
-
-      <!-- النسبة -->
+      <!-- 8 -->
 
       <div
         class="tool-card coming"
@@ -810,8 +793,7 @@
       </div>
 
 
-
-      <!-- الوحدات -->
+      <!-- 9 -->
 
       <div
         class="tool-card coming"
@@ -1001,6 +983,10 @@
           دمج PDF
         </a>
 
+        <a href="split-pdf.html">
+          تقسيم PDF
+        </a>
+
         <a href="#tools">
           جميع الأدوات
         </a>
@@ -1060,7 +1046,7 @@
 
   menuButton.addEventListener(
     "click",
-    function () {
+    function() {
 
       mainNav.classList.toggle("active");
 
