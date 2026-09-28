@@ -3,28 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>أدواتي | أدوات مجانية أونلاين</title>
 
   <meta
     name="description"
-    content="أدواتي منصة عربية مجانية للأدوات المفيدة أونلاين مثل ضغط الصور وتغيير حجمها وتحويل صيغ الصور."
+    content="أدواتي منصة عربية مجانية للأدوات المفيدة أونلاين مثل ضغط الصور وتغيير حجمها وتحويل الصور ودمج ملفات PDF."
   >
 
-  <meta
-    name="robots"
-    content="index, follow"
-  >
-
-  <meta
-    name="theme-color"
-    content="#5b5ce2"
-  >
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#5b5ce2">
 
   <style>
 
@@ -39,11 +28,7 @@
     }
 
     body {
-      font-family:
-        Arial,
-        Tahoma,
-        sans-serif;
-
+      font-family: Arial, Tahoma, sans-serif;
       background: #f6f7fb;
       color: #202124;
       line-height: 1.7;
@@ -64,72 +49,44 @@
       margin: auto;
     }
 
-
-    /* =========================
-       HEADER
-    ========================= */
-
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-
       background: rgba(255,255,255,.96);
-
       backdrop-filter: blur(12px);
-
-      border-bottom:
-        1px solid #e8e8ef;
+      border-bottom: 1px solid #e8e8ef;
     }
 
     .header-inner {
       min-height: 72px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 20px;
     }
 
     .logo {
       display: flex;
       align-items: center;
-
       gap: 10px;
-
       font-size: 25px;
       font-weight: 900;
-
       color: #5051d8;
-
       white-space: nowrap;
     }
 
     .logo-icon {
       width: 45px;
       height: 45px;
-
       border-radius: 14px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #6b6ce8,
-          #4d4ed0
-        );
-
+      background: linear-gradient(135deg, #6b6ce8, #4d4ed0);
       color: white;
-
       display: grid;
       place-items: center;
-
       font-size: 22px;
       font-weight: 900;
-
-      box-shadow:
-        0 8px 20px
-        rgba(91,92,226,.25);
+      box-shadow: 0 8px 20px rgba(91,92,226,.25);
     }
 
     nav {
@@ -142,7 +99,6 @@
       color: #555;
       font-weight: 700;
       font-size: 15px;
-
       transition: .2s;
     }
 
@@ -152,73 +108,36 @@
 
     .menu-button {
       display: none;
-
       border: none;
       background: #f0f0ff;
-
       width: 42px;
       height: 42px;
-
       border-radius: 12px;
-
       font-size: 22px;
-
       cursor: pointer;
     }
 
-
-    /* =========================
-       HERO
-    ========================= */
-
     .hero {
-      padding:
-        80px
-        0
-        65px;
-
+      padding: 80px 0 65px;
       text-align: center;
-
-      background:
-        radial-gradient(
-          circle at top,
-          #eeeeff,
-          #f6f7fb 55%
-        );
+      background: radial-gradient(circle at top, #eeeeff, #f6f7fb 55%);
     }
 
     .hero-badge {
       display: inline-block;
-
-      padding:
-        7px
-        14px;
-
+      padding: 7px 14px;
       border-radius: 50px;
-
       background: #e9e9ff;
-
       color: #5152d5;
-
       font-weight: 800;
-
       font-size: 13px;
-
       margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size:
-        clamp(
-          36px,
-          7vw,
-          64px
-        );
-
+      font-size: clamp(36px, 7vw, 64px);
       line-height: 1.15;
-
       margin-bottom: 18px;
-
       color: #191a24;
     }
 
@@ -228,41 +147,19 @@
 
     .hero p {
       max-width: 720px;
-
-      margin:
-        0
-        auto
-        30px;
-
+      margin: 0 auto 30px;
       color: #6c6c76;
-
-      font-size:
-        clamp(
-          16px,
-          2vw,
-          19px
-        );
+      font-size: clamp(16px, 2vw, 19px);
     }
 
     .hero-button {
       display: inline-block;
-
       background: #5b5ce2;
-
       color: white;
-
-      padding:
-        14px
-        28px;
-
+      padding: 14px 28px;
       border-radius: 14px;
-
       font-weight: 800;
-
-      box-shadow:
-        0 12px 25px
-        rgba(91,92,226,.22);
-
+      box-shadow: 0 12px 25px rgba(91,92,226,.22);
       transition: .2s;
     }
 
@@ -270,91 +167,51 @@
       transform: translateY(-2px);
     }
 
-
-    /* =========================
-       SEARCH
-    ========================= */
-
     .search-section {
       margin-top: -5px;
-
       position: relative;
-
       z-index: 2;
     }
 
     .search-box {
       background: white;
-
-      border:
-        1px solid #e6e6ed;
-
-      box-shadow:
-        0 12px 35px
-        rgba(30,30,80,.08);
-
+      border: 1px solid #e6e6ed;
+      box-shadow: 0 12px 35px rgba(30,30,80,.08);
       border-radius: 18px;
-
       padding: 7px;
-
       display: flex;
-
       max-width: 750px;
-
       margin: auto;
     }
 
     .search-box input {
       flex: 1;
-
       border: none;
       outline: none;
-
-      padding:
-        14px
-        16px;
-
+      padding: 14px 16px;
       font-size: 16px;
-
       background: transparent;
     }
 
     .search-icon {
       width: 48px;
-
       display: grid;
       place-items: center;
-
       color: #5b5ce2;
-
       font-size: 22px;
     }
 
-
-    /* =========================
-       TOOLS
-    ========================= */
-
     .tools-section {
-      padding:
-        75px
-        0;
+      padding: 75px 0;
     }
 
     .section-title {
       text-align: center;
-
       margin-bottom: 40px;
     }
 
     .section-title h2 {
-      font-size:
-        clamp(
-          28px,
-          5vw,
-          40px
-        );
-
+      font-size: clamp(28px, 5vw, 40px);
       margin-bottom: 8px;
     }
 
@@ -364,89 +221,54 @@
 
     .tools-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .tool-card {
       background: white;
-
-      border:
-        1px solid #e6e6ed;
-
+      border: 1px solid #e6e6ed;
       border-radius: 20px;
-
       padding: 25px;
-
       min-height: 205px;
-
       display: flex;
-
       flex-direction: column;
-
-      transition:
-        transform .2s,
-        box-shadow .2s,
-        border-color .2s;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
     }
 
     .tool-card:hover {
-      transform:
-        translateY(-5px);
-
-      border-color:
-        #d0d0ff;
-
-      box-shadow:
-        0 15px 35px
-        rgba(30,30,80,.08);
+      transform: translateY(-5px);
+      border-color: #d0d0ff;
+      box-shadow: 0 15px 35px rgba(30,30,80,.08);
     }
 
     .tool-icon {
       width: 58px;
       height: 58px;
-
       border-radius: 16px;
-
       background: #eeeeff;
-
       color: #5b5ce2;
-
       display: grid;
       place-items: center;
-
       font-size: 28px;
-
       margin-bottom: 18px;
     }
 
     .tool-card h3 {
       font-size: 20px;
-
       margin-bottom: 7px;
     }
 
     .tool-card p {
       color: #777;
-
       font-size: 14px;
-
       flex: 1;
     }
 
     .tool-link {
       margin-top: 15px;
-
       color: #5b5ce2;
-
       font-weight: 800;
-
       font-size: 14px;
     }
 
@@ -456,10 +278,7 @@
 
     .coming:hover {
       transform: none;
-
-      border-color:
-        #e6e6ed;
-
+      border-color: #e6e6ed;
       box-shadow: none;
     }
 
@@ -467,46 +286,26 @@
       color: #999;
     }
 
-
-    /* =========================
-       WHY
-    ========================= */
-
     .why-section {
-      padding:
-        20px
-        0
-        80px;
+      padding: 20px 0 80px;
     }
 
     .why-grid {
       display: grid;
-
-      grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .why-card {
       background: white;
-
-      border:
-        1px solid #e6e6ed;
-
+      border: 1px solid #e6e6ed;
       border-radius: 20px;
-
       padding: 28px;
-
       text-align: center;
     }
 
     .why-icon {
       font-size: 35px;
-
       margin-bottom: 12px;
     }
 
@@ -516,37 +315,18 @@
 
     .why-card p {
       color: #777;
-
       font-size: 14px;
     }
 
-
-    /* =========================
-       ABOUT
-    ========================= */
-
     .about-section {
-      padding:
-        0
-        0
-        80px;
+      padding: 0 0 80px;
     }
 
     .about-box {
-      background:
-        linear-gradient(
-          135deg,
-          #eeeeff,
-          #ffffff
-        );
-
-      border:
-        1px solid #dfdfff;
-
+      background: linear-gradient(135deg, #eeeeff, #ffffff);
+      border: 1px solid #dfdfff;
       border-radius: 25px;
-
       padding: 40px;
-
       text-align: center;
     }
 
@@ -556,68 +336,43 @@
 
     .about-box p {
       max-width: 750px;
-
       margin: auto;
-
       color: #666;
     }
 
-
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer {
       background: #171827;
-
       color: #aaa;
-
-      padding:
-        45px
-        0
-        25px;
+      padding: 45px 0 25px;
     }
 
     .footer-grid {
       display: grid;
-
-      grid-template-columns:
-        2fr
-        1fr
-        1fr;
-
+      grid-template-columns: 2fr 1fr 1fr;
       gap: 35px;
-
       padding-bottom: 30px;
     }
 
     .footer-brand h3 {
       color: white;
-
       font-size: 23px;
-
       margin-bottom: 10px;
     }
 
     .footer-brand p {
       max-width: 450px;
-
       font-size: 14px;
     }
 
     .footer-column h4 {
       color: white;
-
       margin-bottom: 12px;
     }
 
     .footer-column a {
       display: block;
-
       color: #aaa;
-
       font-size: 14px;
-
       margin-bottom: 7px;
     }
 
@@ -626,46 +381,25 @@
     }
 
     .copyright {
-      border-top:
-        1px solid
-        rgba(255,255,255,.08);
-
+      border-top: 1px solid rgba(255,255,255,.08);
       padding-top: 20px;
-
       text-align: center;
-
       font-size: 13px;
     }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
 
     @media (max-width: 850px) {
 
       nav {
         display: none;
-
         position: absolute;
-
         top: 72px;
         right: 4%;
-
         left: 4%;
-
         background: white;
-
         padding: 20px;
-
         border-radius: 16px;
-
-        box-shadow:
-          0 15px 35px
-          rgba(0,0,0,.1);
-
+        box-shadow: 0 15px 35px rgba(0,0,0,.1);
         flex-direction: column;
-
         gap: 15px;
       }
 
@@ -678,25 +412,17 @@
       }
 
       .tools-grid {
-        grid-template-columns:
-          repeat(
-            2,
-            1fr
-          );
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .why-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .footer-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
-
     }
-
 
     @media (max-width: 550px) {
 
@@ -705,8 +431,7 @@
       }
 
       .tools-grid {
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
       }
 
       .tool-card {
@@ -716,11 +441,9 @@
       .about-box {
         padding: 28px 20px;
       }
-
     }
 
   </style>
-
 </head>
 
 
@@ -731,10 +454,7 @@
 
   <div class="container header-inner">
 
-    <a
-      href="index.html"
-      class="logo"
-    >
+    <a href="index.html" class="logo">
 
       <span class="logo-icon">
         أ
@@ -867,7 +587,7 @@
     >
 
 
-      <!-- 1 -->
+      <!-- ضغط الصور -->
 
       <a
         href="compress-image.html"
@@ -896,7 +616,7 @@
 
 
 
-      <!-- 2 -->
+      <!-- تغيير حجم الصور -->
 
       <a
         href="resize-image.html"
@@ -925,7 +645,7 @@
 
 
 
-      <!-- 3 -->
+      <!-- تحويل الصور -->
 
       <a
         href="convert-image.html"
@@ -954,10 +674,11 @@
 
 
 
-      <!-- 4 -->
+      <!-- دمج PDF -->
 
-      <div
-        class="tool-card coming"
+      <a
+        href="merge-pdf.html"
+        class="tool-card"
         data-name="دمج PDF"
       >
 
@@ -970,18 +691,19 @@
         </h3>
 
         <p>
-          اجمع عدة ملفات PDF في ملف واحد بسهولة.
+          اجمع عدة ملفات PDF في ملف واحد
+          بسهولة مباشرة من المتصفح.
         </p>
 
         <span class="tool-link">
-          قريبًا
+          ابدأ الآن ←
         </span>
 
-      </div>
+      </a>
 
 
 
-      <!-- 5 -->
+      <!-- تقسيم PDF -->
 
       <div
         class="tool-card coming"
@@ -1008,7 +730,7 @@
 
 
 
-      <!-- 6 -->
+      <!-- QR -->
 
       <div
         class="tool-card coming"
@@ -1035,7 +757,7 @@
 
 
 
-      <!-- 7 -->
+      <!-- العمر -->
 
       <div
         class="tool-card coming"
@@ -1062,7 +784,7 @@
 
 
 
-      <!-- 8 -->
+      <!-- النسبة -->
 
       <div
         class="tool-card coming"
@@ -1089,7 +811,7 @@
 
 
 
-      <!-- 9 -->
+      <!-- الوحدات -->
 
       <div
         class="tool-card coming"
@@ -1129,7 +851,6 @@
 >
 
   <div class="container">
-
 
     <div class="section-title">
 
@@ -1276,6 +997,10 @@
           تحويل الصور
         </a>
 
+        <a href="merge-pdf.html">
+          دمج PDF
+        </a>
+
         <a href="#tools">
           جميع الأدوات
         </a>
@@ -1327,44 +1052,34 @@
 <script>
 
   const menuButton =
-    document.getElementById(
-      "menuButton"
-    );
+    document.getElementById("menuButton");
 
   const mainNav =
-    document.getElementById(
-      "mainNav"
-    );
+    document.getElementById("mainNav");
 
 
   menuButton.addEventListener(
     "click",
     function () {
 
-      mainNav.classList.toggle(
-        "active"
-      );
+      mainNav.classList.toggle("active");
 
     }
   );
 
 
   const navLinks =
-    mainNav.querySelectorAll(
-      "a"
-    );
+    mainNav.querySelectorAll("a");
 
 
   navLinks.forEach(
-    function (link) {
+    function(link) {
 
       link.addEventListener(
         "click",
-        function () {
+        function() {
 
-          mainNav.classList.remove(
-            "active"
-          );
+          mainNav.classList.remove("active");
 
         }
       );
@@ -1374,19 +1089,15 @@
 
 
   const searchInput =
-    document.getElementById(
-      "searchInput"
-    );
+    document.getElementById("searchInput");
 
   const toolCards =
-    document.querySelectorAll(
-      ".tool-card"
-    );
+    document.querySelectorAll(".tool-card");
 
 
   searchInput.addEventListener(
     "input",
-    function () {
+    function() {
 
       const search =
         searchInput.value
@@ -1395,7 +1106,7 @@
 
 
       toolCards.forEach(
-        function (card) {
+        function(card) {
 
           const name =
             (
@@ -1404,17 +1115,13 @@
             ).toLowerCase();
 
 
-          if (
-            name.includes(search)
-          ) {
+          if (name.includes(search)) {
 
-            card.style.display =
-              "";
+            card.style.display = "";
 
           } else {
 
-            card.style.display =
-              "none";
+            card.style.display = "none";
 
           }
 
