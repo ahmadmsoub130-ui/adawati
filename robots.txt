@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahmadmsoub130-ui.github.io/adawati/sitemap.xml
