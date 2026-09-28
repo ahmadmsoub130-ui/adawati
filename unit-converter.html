@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>تحويل الوحدات | أدواتي</title>
+
+  <meta name="description"
+        content="أداة مجانية لتحويل الوحدات مثل الطول والوزن ودرجة الحرارة والمساحة والحجم والسرعة.">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e8ebf2;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #2563eb;
+      font-size: 27px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    nav a {
+      padding: 9px 14px;
+      border-radius: 10px;
+      color: #4b5563;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 23px;
+      width: 44px;
+      height: 42px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 55px 20px 80px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #667085;
+      font-size: 17px;
+    }
+
+    .converter {
+      background: white;
+      border: 1px solid #e8ebf2;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    select,
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      background: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    select:focus,
+    input:focus {
+      border-color: #2563eb;
+    }
+
+    .conversion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: end;
+    }
+
+    .swap-btn {
+      width: 100%;
+      margin: 5px 0 22px;
+
+      border: none;
+      background: #eff6ff;
+      color: #2563eb;
+
+      padding: 12px;
+      border-radius: 12px;
+
+      font-size: 20px;
+      font-weight: 900;
+
+      cursor: pointer;
+    }
+
+    .swap-btn:hover {
+      background: #dbeafe;
+    }
+
+    .result {
+      margin-top: 10px;
+      padding: 25px;
+
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 17px;
+
+      text-align: center;
+    }
+
+    .result-title {
+      color: #475569;
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .result-value {
+      color: #1d4ed8;
+      font-size: 30px;
+      font-weight: 900;
+      word-break: break-word;
+    }
+
+    .category-info {
+      margin-top: 25px;
+      padding: 18px;
+      background: #f8fafc;
+      border-radius: 14px;
+      color: #64748b;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer-inner a {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    @media (max-width: 650px) {
+
+      .header-inner {
+        padding: 13px 15px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+
+        position: absolute;
+        top: 68px;
+        right: 12px;
+        left: 12px;
+
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 15px;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        text-align: center;
+      }
+
+      .container {
+        padding: 40px 15px 60px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .converter {
+        padding: 20px;
+      }
+
+      .conversion-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-value {
+        font-size: 25px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+    <a href="index.html" class="logo">
+      أدواتي
+    </a>
+
+    <button class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="فتح القائمة">
+      ☰
+    </button>
+
+    <nav id="mainNav">
+      <a href="index.html">الرئيسية</a>
+      <a href="index.html#tools">الأدوات</a>
+      <a href="index.html#about">عن الموقع</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <div class="container">
+
+    <section class="hero">
+
+      <span class="badge">
+        أداة مجانية
+      </span>
+
+      <h1>
+        تحويل الوحدات
+      </h1>
+
+      <p>
+        حوّل بين وحدات الطول والوزن ودرجة الحرارة والمساحة والحجم والسرعة.
+      </p>
+
+    </section>
+
+
+    <section class="converter">
+
+      <div class="field">
+
+        <label for="category">
+          نوع التحويل
+        </label>
+
+        <select id="category"
+                onchange="updateUnits()">
+
+          <option value="length">
+            الطول
+          </option>
+
+          <option value="weight">
+            الوزن
+          </option>
+
+          <option value="temperature">
+            درجة الحرارة
+          </option>
+
+          <option value="area">
+            المساحة
+          </option>
+
+          <option value="volume">
+            الحجم
+          </option>
+
+          <option value="speed">
+            السرعة
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="conversion-grid">
+
+        <div class="field">
+
+          <label for="fromUnit">
+            من
+          </label>
+
+          <select id="fromUnit"
+                  onchange="convert()">
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="toUnit">
+            إلى
+          </label>
+
+          <select id="toUnit"
+                  onchange="convert()">
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <button class="swap-btn"
+              onclick="swapUnits()"
+              title="تبديل الوحدات">
+        ⇄ تبديل الوحدات
+      </button>
+
+
+      <div class="field">
+
+        <label for="amount">
+          القيمة
+        </label>
+
+        <input
+          type="number"
+          id="amount"
+          value="1"
+          step="any"
+          oninput="convert()"
+          placeholder="أدخل الرقم"
+        >
+
+      </div>
+
+
+      <div class="result">
+
+        <div class="result-title">
+          النتيجة
+        </div>
+
+        <div class="result-value"
+             id="result">
+          1
+        </div>
+
+      </div>
+
+
+      <div class="category-info"
+           id="categoryInfo">
+        اختر الوحدات وأدخل القيمة للحصول على النتيجة.
+      </div>
+
+    </section>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      © 2026 أدواتي - جميع الحقوق محفوظة
+    </div>
+
+    <div style="margin-top:8px;">
+      <a href="index.html">
+        العودة إلى الصفحة الرئيسية
+      </a>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+const units = {
+
+  length: {
+    name: "الطول",
+
+    units: {
+      meter: {
+        name: "متر",
+        factor: 1
+      },
+
+      kilometer: {
+        name: "كيلومتر",
+        factor: 1000
+      },
+
+      centimeter: {
+        name: "سنتيمتر",
+        factor: 0.01
+      },
+
+      millimeter: {
+        name: "مليمتر",
+        factor: 0.001
+      },
+
+      mile: {
+        name: "ميل",
+        factor: 1609.344
+      },
+
+      yard: {
+        name: "ياردة",
+        factor: 0.9144
+      },
+
+      foot: {
+        name: "قدم",
+        factor: 0.3048
+      },
+
+      inch: {
+        name: "بوصة",
+        factor: 0.0254
+      }
+    }
+  },
+
+
+  weight: {
+    name: "الوزن",
+
+    units: {
+      kilogram: {
+        name: "كيلوغرام",
+        factor: 1
+      },
+
+      gram: {
+        name: "غرام",
+        factor: 0.001
+      },
+
+      milligram: {
+        name: "مليغرام",
+        factor: 0.000001
+      },
+
+      ton: {
+        name: "طن",
+        factor: 1000
+      },
+
+      pound: {
+        name: "رطل",
+        factor: 0.45359237
+      },
+
+      ounce: {
+        name: "أونصة",
+        factor: 0.028349523125
+      }
+    }
+  },
+
+
+  temperature: {
+    name: "درجة الحرارة",
+
+    units: {
+      celsius: {
+        name: "مئوية °C"
+      },
+
+      fahrenheit: {
+        name: "فهرنهايت °F"
+      },
+
+      kelvin: {
+        name: "كلفن K"
+      }
+    }
+  },
+
+
+  area: {
+    name: "المساحة",
+
+    units: {
+      squareMeter: {
+        name: "متر مربع",
+        factor: 1
+      },
+
+      squareKilometer: {
+        name: "كيلومتر مربع",
+        factor: 1000000
+      },
+
+      squareCentimeter: {
+        name: "سنتيمتر مربع",
+        factor: 0.0001
+      },
+
+      hectare: {
+        name: "هكتار",
+        factor: 10000
+      },
+
+      acre: {
+        name: "فدان / Acre",
+        factor: 4046.8564224
+      },
+
+      squareFoot: {
+        name: "قدم مربع",
+        factor: 0.09290304
+      }
+    }
+  },
+
+
+  volume: {
+    name: "الحجم",
+
+    units: {
+      liter: {
+        name: "لتر",
+        factor: 1
+      },
+
+      milliliter: {
+        name: "مليلتر",
+        factor: 0.001
+      },
+
+      cubicMeter: {
+        name: "متر مكعب",
+        factor: 1000
+      },
+
+      gallon: {
+        name: "غالون أمريكي",
+        factor: 3.785411784
+      },
+
+      cup: {
+        name: "كوب",
+        factor: 0.2365882365
+      },
+
+      pint: {
+        name: "باينت",
+        factor: 0.473176473
+      }
+    }
+  },
+
+
+  speed: {
+    name: "السرعة",
+
+    units: {
+      kmh: {
+        name: "كيلومتر/ساعة",
+        factor: 1
+      },
+
+      mph: {
+        name: "ميل/ساعة",
+        factor: 1.609344
+      },
+
+      ms: {
+        name: "متر/ثانية",
+        factor: 3.6
+      },
+
+      knot: {
+        name: "عقدة",
+        factor: 1.852
+      }
+    }
+  }
+
+};
+
+
+function toggleMenu() {
+
+  document
+    .getElementById("mainNav")
+    .classList.toggle("active");
+
+}
+
+
+function updateUnits() {
+
+  const category =
+    document.getElementById("category").value;
+
+  const from =
+    document.getElementById("fromUnit");
+
+  const to =
+    document.getElementById("toUnit");
+
+  from.innerHTML = "";
+  to.innerHTML = "";
+
+  const categoryData =
+    units[category];
+
+  Object.keys(categoryData.units).forEach(function(key) {
+
+    const option1 =
+      document.createElement("option");
+
+    option1.value = key;
+    option1.textContent =
+      categoryData.units[key].name;
+
+    from.appendChild(option1);
+
+
+    const option2 =
+      document.createElement("option");
+
+    option2.value = key;
+    option2.textContent =
+      categoryData.units[key].name;
+
+    to.appendChild(option2);
+
+  });
+
+
+  if (Object.keys(categoryData.units).length > 1) {
+
+    to.selectedIndex = 1;
+
+  }
+
+
+  document
+    .getElementById("categoryInfo")
+    .textContent =
+      "تحويلات " + categoryData.name + " تتم مباشرة داخل المتصفح.";
+
+
+  convert();
+
+}
+
+
+function convert() {
+
+  const category =
+    document.getElementById("category").value;
+
+  const from =
+    document.getElementById("fromUnit").value;
+
+  const to =
+    document.getElementById("toUnit").value;
+
+  const amount =
+    parseFloat(
+      document.getElementById("amount").value
+    );
+
+  const resultElement =
+    document.getElementById("result");
+
+
+  if (isNaN(amount)) {
+
+    resultElement.textContent = "أدخل قيمة صحيحة";
+
+    return;
+  }
+
+
+  let result;
+
+
+  if (category === "temperature") {
+
+    result =
+      convertTemperature(
+        amount,
+        from,
+        to
+      );
+
+  } else {
+
+    const fromFactor =
+      units[category].units[from].factor;
+
+    const toFactor =
+      units[category].units[to].factor;
+
+    const baseValue =
+      amount * fromFactor;
+
+    result =
+      baseValue / toFactor;
+
+  }
+
+
+  resultElement.textContent =
+    formatNumber(result);
+
+}
+
+
+function convertTemperature(
+  value,
+  from,
+  to
+) {
+
+  let celsius;
+
+
+  if (from === "celsius") {
+
+    celsius = value;
+
+  } else if (from === "fahrenheit") {
+
+    celsius =
+      (value - 32) * 5 / 9;
+
+  } else if (from === "kelvin") {
+
+    celsius =
+      value - 273.15;
+
+  }
+
+
+  if (to === "celsius") {
+
+    return celsius;
+
+  }
+
+
+  if (to === "fahrenheit") {
+
+    return celsius * 9 / 5 + 32;
+
+  }
+
+
+  if (to === "kelvin") {
+
+    return celsius + 273.15;
+
+  }
+
+}
+
+
+function formatNumber(number) {
+
+  if (!isFinite(number)) {
+    return "غير صالح";
+  }
+
+  if (Math.abs(number) >= 1000000000) {
+    return number.toExponential(6);
+  }
+
+  return Number(
+    number.toFixed(10)
+  ).toLocaleString("en-US");
+
+}
+
+
+function swapUnits() {
+
+  const from =
+    document.getElementById("fromUnit");
+
+  const to =
+    document.getElementById("toUnit");
+
+  const oldFrom =
+    from.value;
+
+  from.value =
+    to.value;
+
+  to.value =
+    oldFrom;
+
+  convert();
+
+}
+
+
+updateUnits();
+
+</script>
+
+</body>
+</html>
