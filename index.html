@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>أدواتي | أدوات مجانية أونلاين</title>
-
-  <meta name="description"
-    content="أدواتي موقع عربي مجاني يوفر أدوات أونلاين مثل ضغط الصور وتغيير حجمها وتحويلها ودمج وتقسيم PDF وإنشاء QR Code وحساب العمر.">
-
-  <meta name="keywords"
-    content="أدوات أونلاين, أدوات مجانية, ضغط الصور, تغيير حجم الصور, تحويل الصور, PDF, دمج PDF, تقسيم PDF, QR Code, حساب العمر">
-
+  <meta name="description" content="أدواتي: مجموعة أدوات مجانية وسهلة أونلاين لضغط الصور وتغيير حجمها وتحويلها ودمج وتقسيم PDF وإنشاء QR وحساب العمر والنسب المئوية.">
+  <meta name="keywords" content="أدوات أونلاين, ضغط الصور, تغيير حجم الصور, تحويل الصور, PDF, QR Code, حساب العمر, حساب النسبة المئوية">
   <meta name="robots" content="index, follow">
 
   <style>
@@ -20,10 +14,6 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -35,343 +25,293 @@
 
     a {
       text-decoration: none;
+      color: inherit;
     }
 
     header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8ebf2;
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e5e7eb;
     }
 
     .header-inner {
       max-width: 1150px;
       margin: auto;
-      padding: 15px 20px;
+      padding: 16px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 20px;
     }
 
     .logo {
-      color: #2563eb;
       font-size: 27px;
       font-weight: 900;
+      color: #2563eb;
       white-space: nowrap;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 8px;
     }
 
     nav a {
-      color: #374151;
-      font-size: 15px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      color: #4b5563;
       font-weight: 700;
+      transition: 0.2s;
     }
 
     nav a:hover {
+      background: #eff6ff;
       color: #2563eb;
     }
 
     .menu-btn {
       display: none;
-      border: 0;
+      border: none;
       background: #eff6ff;
       color: #2563eb;
-      padding: 9px 12px;
+      font-size: 24px;
+      width: 45px;
+      height: 42px;
       border-radius: 10px;
-      font-size: 20px;
       cursor: pointer;
     }
 
     .hero {
       max-width: 1150px;
       margin: auto;
-      padding: 75px 20px 55px;
+      padding: 65px 20px 45px;
       text-align: center;
     }
 
-    .hero-badge {
+    .badge {
       display: inline-block;
       background: #dbeafe;
       color: #1d4ed8;
       padding: 7px 15px;
-      border-radius: 50px;
-      font-size: 14px;
+      border-radius: 30px;
       font-weight: 800;
+      font-size: 14px;
       margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: 48px;
-      line-height: 1.2;
+      font-size: 45px;
+      line-height: 1.25;
       margin-bottom: 18px;
       color: #111827;
-    }
-
-    .hero h1 span {
-      color: #2563eb;
     }
 
     .hero p {
       max-width: 720px;
       margin: auto;
-      color: #64748b;
+      color: #667085;
       font-size: 18px;
     }
 
     .search-box {
       max-width: 650px;
       margin: 30px auto 0;
+      position: relative;
     }
 
     .search-box input {
       width: 100%;
-      height: 55px;
-      border: 1px solid #dbe1ea;
-      border-radius: 16px;
+      padding: 17px 20px;
+      border: 2px solid #e5e7eb;
+      border-radius: 15px;
       background: white;
-      padding: 0 20px;
       font-size: 16px;
       outline: none;
-      box-shadow: 0 5px 20px rgba(15,23,42,.05);
+      transition: 0.2s;
+      text-align: right;
     }
 
     .search-box input:focus {
       border-color: #2563eb;
-      box-shadow: 0 0 0 4px rgba(37,99,235,.1);
+      box-shadow: 0 5px 25px rgba(37, 99, 235, 0.08);
     }
 
     .tools-section {
       max-width: 1150px;
       margin: auto;
-      padding: 25px 20px 70px;
+      padding: 20px 20px 70px;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
     .section-title h2 {
-      font-size: 32px;
+      font-size: 30px;
       color: #111827;
       margin-bottom: 8px;
     }
 
     .section-title p {
-      color: #64748b;
+      color: #6b7280;
     }
 
     .tools-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .tool-card {
-      position: relative;
-      display: block;
-      background: #fff;
-      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      border: 1px solid #e8ebf2;
       border-radius: 20px;
       padding: 25px;
-      color: #172033;
-      transition: .25s;
-      box-shadow: 0 5px 18px rgba(15,23,42,.04);
+      min-height: 205px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
     }
 
     .tool-card:hover {
       transform: translateY(-5px);
       border-color: #bfdbfe;
-      box-shadow: 0 15px 35px rgba(37,99,235,.1);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.09);
     }
 
     .tool-icon {
       width: 58px;
       height: 58px;
-      border-radius: 16px;
-      background: #eff6ff;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 16px;
+      background: #eff6ff;
       font-size: 29px;
-      margin-bottom: 18px;
+      margin-bottom: 17px;
     }
 
     .tool-card h3 {
       font-size: 20px;
-      margin-bottom: 8px;
       color: #111827;
+      margin-bottom: 7px;
     }
 
     .tool-card p {
-      color: #64748b;
+      color: #667085;
       font-size: 14px;
-      line-height: 1.8;
     }
 
-    .tool-arrow {
-      position: absolute;
-      left: 22px;
-      bottom: 22px;
+    .tool-link {
+      margin-top: 18px;
       color: #2563eb;
-      font-size: 20px;
+      font-weight: 800;
+      font-size: 14px;
     }
 
     .coming {
       cursor: default;
-      opacity: .72;
+      opacity: 0.72;
     }
 
     .coming:hover {
       transform: none;
-      border-color: #e5e7eb;
-      box-shadow: 0 5px 18px rgba(15,23,42,.04);
+      border-color: #e8ebf2;
+      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
     }
 
-    .coming-label {
-      display: inline-block;
-      margin-top: 12px;
-      background: #f1f5f9;
-      color: #64748b;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
+    .coming .tool-icon {
+      background: #f3f4f6;
     }
 
-    .why-section {
-      background: #fff;
-      border-top: 1px solid #e5e7eb;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .why-inner {
-      max-width: 1150px;
-      margin: auto;
-      padding: 70px 20px;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 25px;
-    }
-
-    .why-card {
-      text-align: center;
-      padding: 25px;
-    }
-
-    .why-icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .why-card h3 {
-      margin-bottom: 8px;
-      font-size: 19px;
-    }
-
-    .why-card p {
-      color: #64748b;
-      font-size: 14px;
-    }
-
-    .about {
-      max-width: 900px;
-      margin: auto;
-      padding: 70px 20px;
-      text-align: center;
-    }
-
-    .about h2 {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-
-    .about p {
-      color: #64748b;
-      line-height: 2;
+    .coming .tool-link {
+      color: #9ca3af;
     }
 
     footer {
       background: #111827;
-      color: #cbd5e1;
-      padding: 45px 20px 25px;
+      color: #d1d5db;
+      margin-top: 20px;
     }
 
     .footer-inner {
       max-width: 1150px;
       margin: auto;
+      padding: 45px 20px 25px;
     }
 
-    .footer-grid {
+    .footer-top {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: 1.3fr 1fr 1fr;
       gap: 40px;
-      padding-bottom: 30px;
+      padding-bottom: 35px;
     }
 
-    .footer-brand h3 {
+    .footer-brand h2 {
       color: white;
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 25px;
+      margin-bottom: 12px;
     }
 
     .footer-brand p {
+      color: #9ca3af;
+      max-width: 400px;
       font-size: 14px;
-      line-height: 1.9;
     }
 
-    .footer-col h4 {
+    .footer-col h3 {
       color: white;
+      font-size: 16px;
       margin-bottom: 13px;
     }
 
     .footer-col a {
       display: block;
-      color: #cbd5e1;
-      margin-bottom: 8px;
+      color: #9ca3af;
       font-size: 14px;
+      margin-bottom: 7px;
+      transition: 0.2s;
     }
 
     .footer-col a:hover {
       color: white;
     }
 
-    .copyright {
-      border-top: 1px solid #374151;
+    .footer-bottom {
+      border-top: 1px solid #273244;
       padding-top: 20px;
       text-align: center;
+      color: #9ca3af;
       font-size: 13px;
     }
 
-    @media (max-width:850px) {
-
+    @media (max-width: 850px) {
       .tools-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
+      .footer-top {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 38px;
       }
     }
 
-    @media (max-width:650px) {
-
+    @media (max-width: 650px) {
       .header-inner {
         padding: 13px 15px;
+      }
+
+      .logo {
+        font-size: 24px;
       }
 
       .menu-btn {
@@ -382,16 +322,15 @@
         display: none;
         position: absolute;
         top: 68px;
-        right: 15px;
-        left: 15px;
+        right: 12px;
+        left: 12px;
         background: white;
         border: 1px solid #e5e7eb;
         border-radius: 15px;
-        padding: 15px;
-        box-shadow: 0 15px 35px rgba(15,23,42,.12);
+        padding: 10px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
       }
 
       nav.active {
@@ -399,41 +338,37 @@
       }
 
       nav a {
-        padding: 12px 8px;
-        border-bottom: 1px solid #f1f5f9;
-      }
-
-      nav a:last-child {
-        border-bottom: 0;
+        text-align: center;
       }
 
       .hero {
-        padding: 55px 18px 40px;
+        padding: 45px 15px 35px;
       }
 
       .hero h1 {
-        font-size: 34px;
+        font-size: 31px;
       }
 
       .hero p {
-        font-size: 15px;
+        font-size: 16px;
       }
 
       .tools-section {
-        padding: 20px 15px 55px;
+        padding-left: 15px;
+        padding-right: 15px;
       }
 
       .tools-grid {
         grid-template-columns: 1fr;
       }
 
-      .section-title h2 {
-        font-size: 27px;
+      .tool-card {
+        min-height: 185px;
       }
 
-      .footer-grid {
+      .footer-top {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 28px;
       }
     }
   </style>
@@ -442,485 +377,293 @@
 <body>
 
 <header>
-
   <div class="header-inner">
 
-    <a href="index.html" class="logo">
-      أدواتي
-    </a>
+    <a href="index.html" class="logo">أدواتي</a>
 
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="القائمة">
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="فتح القائمة">
       ☰
     </button>
 
     <nav id="mainNav">
-      <a href="#home">الرئيسية</a>
+      <a href="index.html">الرئيسية</a>
       <a href="#tools">الأدوات</a>
-      <a href="#about">عن أدواتي</a>
+      <a href="#about">عن الموقع</a>
     </nav>
 
   </div>
-
 </header>
 
+<main>
 
-<section class="hero" id="home">
+  <section class="hero">
 
-  <div class="hero-badge">
-    أدوات مجانية وسهلة
-  </div>
+    <span class="badge">أدوات مجانية وسهلة</span>
 
-  <h1>
-    أدواتك اليومية
-    <span>في مكان واحد</span>
-  </h1>
-
-  <p>
-    مجموعة من الأدوات المجانية التي تساعدك على إنجاز مهامك
-    بسرعة وسهولة، مباشرة من المتصفح.
-  </p>
-
-  <div class="search-box">
-
-    <input
-      type="search"
-      id="searchInput"
-      placeholder="ابحث عن أداة..."
-      oninput="searchTools()"
-    >
-
-  </div>
-
-</section>
-
-
-<section class="tools-section" id="tools">
-
-  <div class="section-title">
-
-    <h2>
-      الأدوات
-    </h2>
+    <h1>أدواتك اليومية في مكان واحد</h1>
 
     <p>
-      اختر الأداة التي تحتاجها وابدأ مباشرة
+      استخدم مجموعة من الأدوات المجانية لإنجاز مهامك اليومية بسرعة
+      ومن دون الحاجة إلى تثبيت برامج.
     </p>
 
-  </div>
-
-
-  <div class="tools-grid" id="toolsGrid">
-
-
-    <!-- ضغط الصور -->
-
-    <a
-      href="compress-image.html"
-      class="tool-card"
-      data-name="ضغط الصور"
-    >
-
-      <div class="tool-icon">
-        🖼️
-      </div>
-
-      <h3>
-        ضغط الصور
-      </h3>
-
-      <p>
-        قلل حجم صورك مع الحفاظ على جودة مناسبة لتوفير مساحة وسرعة التحميل.
-      </p>
-
-      <span class="tool-arrow">
-        ←
-      </span>
-
-    </a>
-
-
-    <!-- تغيير حجم الصور -->
-
-    <a
-      href="resize-image.html"
-      class="tool-card"
-      data-name="تغيير حجم الصور"
-    >
-
-      <div class="tool-icon">
-        📐
-      </div>
-
-      <h3>
-        تغيير حجم الصور
-      </h3>
-
-      <p>
-        غيّر أبعاد الصور بسهولة حسب المقاس الذي تحتاجه.
-      </p>
-
-      <span class="tool-arrow">
-        ←
-      </span>
-
-    </a>
-
-
-    <!-- تحويل الصور -->
-
-    <a
-      href="convert-image.html"
-      class="tool-card"
-      data-name="تحويل الصور"
-    >
-
-      <div class="tool-icon">
-        🔄
-      </div>
-
-      <h3>
-        تحويل الصور
-      </h3>
-
-      <p>
-        حوّل الصور بين JPG وPNG وWebP بسهولة.
-      </p>
-
-      <span class="tool-arrow">
-        ←
-      </span>
-
-    </a>
-
-
-    <!-- دمج PDF -->
-
-    <a
-      href="merge-pdf.html"
-      class="tool-card"
-      data-name="دمج PDF"
-    >
-
-      <div class="tool-icon">
-        📚
-      </div>
-
-      <h3>
-        دمج PDF
-      </h3>
-
-      <p>
-        اجمع عدة ملفات PDF في ملف واحد بسرعة وسهولة.
-      </p>
-
-      <span class="tool-arrow">
-        ←
-      </span>
-
-    </a>
-
-
-    <!-- تقسيم PDF -->
-
-    <a
-      href="split-pdf.html"
-      class="tool-card"
-      data-name="تقسيم PDF"
-    >
-
-      <div class="tool-icon">
-        ✂️
-      </div>
-
-      <h3>
-        تقسيم PDF
-      </h3>
-
-      <p>
-        استخرج الصفحات التي تحتاجها من ملف PDF واحفظها كملف مستقل.
-      </p>
-
-      <span class="tool-arrow">
-        ←
-      </span>
-
-    </a>
-
-
-    <!-- QR Code -->
-
-    <a
-      href="qr-code.html"
-      class="tool-card"
-      data-name="إنشاء QR Code رمز QR"
-    >
-
-      <div class="tool-icon">
-        🔳
-      </div>
-
-      <h3>
-        إنشاء QR Code
-      </h3>
-
-      <p>
-        أنشئ رمز QR لأي رابط أو نص وحمّله كصورة مجانًا.
-      </p>
-
-      <span class="tool-arrow">
-        ←
-      </span>
-
-    </a>
-
-
-    <!-- حساب العمر -->
-
-    <a
-      href="age-calculator.html"
-      class="tool-card"
-      data-name="حساب العمر حاسبة العمر"
-    >
-
-      <div class="tool-icon">
-        🎂
-      </div>
-
-      <h3>
-        حساب العمر
-      </h3>
-
-      <p>
-        احسب عمرك بدقة بالسنوات والأشهر والأيام واعرف عدد الأيام التي عشتها.
-      </p>
-
-      <span class="tool-arrow">
-        ←
-      </span>
-
-    </a>
-
-
-    <!-- حساب النسبة -->
-
-    <div
-      class="tool-card coming"
-      data-name="حساب النسبة المئوية النسبة"
-    >
-
-      <div class="tool-icon">
-        %
-      </div>
-
-      <h3>
-        حساب النسبة المئوية
-      </h3>
-
-      <p>
-        احسب النسب المئوية والزيادة والنقصان بسهولة.
-      </p>
-
-      <span class="coming-label">
-        قريبًا
-      </span>
-
+    <div class="search-box">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="ابحث عن أداة..."
+        oninput="searchTools()"
+      >
     </div>
 
-
-    <!-- تحويل الوحدات -->
-
-    <div
-      class="tool-card coming"
-      data-name="تحويل الوحدات"
-    >
-
-      <div class="tool-icon">
-        📏
-      </div>
-
-      <h3>
-        تحويل الوحدات
-      </h3>
-
-      <p>
-        حوّل بين وحدات الطول والوزن والحرارة وغيرها.
-      </p>
-
-      <span class="coming-label">
-        قريبًا
-      </span>
-
-    </div>
-
-  </div>
-
-</section>
+  </section>
 
 
-<section class="why-section">
-
-  <div class="why-inner">
+  <section class="tools-section" id="tools">
 
     <div class="section-title">
+      <h2>أدواتنا</h2>
+      <p>اختر الأداة التي تحتاجها وابدأ مباشرة</p>
+    </div>
 
-      <h2>
-        لماذا أدواتي؟
+    <div class="tools-grid">
+
+      <!-- 1 -->
+      <a
+        href="compress-image.html"
+        class="tool-card"
+        data-name="ضغط الصور ضغط صورة تصغير حجم الصور"
+      >
+        <div>
+          <div class="tool-icon">🗜️</div>
+          <h3>ضغط الصور</h3>
+          <p>
+            قلل حجم الصور مع الحفاظ على جودة مناسبة لتسهيل مشاركتها ورفعها.
+          </p>
+        </div>
+
+        <div class="tool-link">استخدم الأداة ←</div>
+      </a>
+
+
+      <!-- 2 -->
+      <a
+        href="resize-image.html"
+        class="tool-card"
+        data-name="تغيير حجم الصور تعديل مقاس الصور"
+      >
+        <div>
+          <div class="tool-icon">📐</div>
+          <h3>تغيير حجم الصور</h3>
+          <p>
+            غيّر عرض وارتفاع الصور بسهولة مع إمكانية الحفاظ على تناسبها.
+          </p>
+        </div>
+
+        <div class="tool-link">استخدم الأداة ←</div>
+      </a>
+
+
+      <!-- 3 -->
+      <a
+        href="convert-image.html"
+        class="tool-card"
+        data-name="تحويل الصور تحويل صيغة الصور jpg png webp"
+      >
+        <div>
+          <div class="tool-icon">🔄</div>
+          <h3>تحويل الصور</h3>
+          <p>
+            حوّل الصور بين JPG وPNG وWebP بسهولة وسرعة.
+          </p>
+        </div>
+
+        <div class="tool-link">استخدم الأداة ←</div>
+      </a>
+
+
+      <!-- 4 -->
+      <a
+        href="merge-pdf.html"
+        class="tool-card"
+        data-name="دمج pdf دمج ملفات pdf"
+      >
+        <div>
+          <div class="tool-icon">📚</div>
+          <h3>دمج PDF</h3>
+          <p>
+            ادمج عدة ملفات PDF في ملف واحد مرتب بسهولة.
+          </p>
+        </div>
+
+        <div class="tool-link">استخدم الأداة ←</div>
+      </a>
+
+
+      <!-- 5 -->
+      <a
+        href="split-pdf.html"
+        class="tool-card"
+        data-name="تقسيم pdf فصل صفحات pdf"
+      >
+        <div>
+          <div class="tool-icon">✂️</div>
+          <h3>تقسيم PDF</h3>
+          <p>
+            اختر الصفحات التي تريدها وأنشئ ملف PDF جديد منها.
+          </p>
+        </div>
+
+        <div class="tool-link">استخدم الأداة ←</div>
+      </a>
+
+
+      <!-- 6 -->
+      <a
+        href="qr-code.html"
+        class="tool-card"
+        data-name="qr code رمز qr إنشاء qr كود qr"
+      >
+        <div>
+          <div class="tool-icon">▦</div>
+          <h3>إنشاء QR Code</h3>
+          <p>
+            أنشئ رمز QR للنصوص والروابط وحمّله كصورة.
+          </p>
+        </div>
+
+        <div class="tool-link">استخدم الأداة ←</div>
+      </a>
+
+
+      <!-- 7 -->
+      <a
+        href="age-calculator.html"
+        class="tool-card"
+        data-name="حساب العمر حاسبة العمر تاريخ الميلاد"
+      >
+        <div>
+          <div class="tool-icon">🎂</div>
+          <h3>حساب العمر</h3>
+          <p>
+            احسب عمرك بالسنوات والأشهر والأيام واعرف موعد عيد ميلادك القادم.
+          </p>
+        </div>
+
+        <div class="tool-link">استخدم الأداة ←</div>
+      </a>
+
+
+      <!-- 8 -->
+      <a
+        href="percentage-calculator.html"
+        class="tool-card"
+        data-name="حساب النسبة المئوية النسبة المئوية حاسبة النسبة"
+      >
+        <div>
+          <div class="tool-icon">％</div>
+          <h3>حساب النسبة المئوية</h3>
+          <p>
+            احسب النسب المئوية والزيادة والنقصان وإضافة أو خصم نسبة من رقم.
+          </p>
+        </div>
+
+        <div class="tool-link">استخدم الأداة ←</div>
+      </a>
+
+
+      <!-- 9 -->
+      <div
+        class="tool-card coming"
+        data-name="تحويل الوحدات تحويل العملات الطول الوزن الحرارة"
+      >
+        <div>
+          <div class="tool-icon">📏</div>
+          <h3>تحويل الوحدات</h3>
+          <p>
+            تحويل الطول والوزن ودرجة الحرارة وغيرها من الوحدات.
+          </p>
+        </div>
+
+        <div class="tool-link">قريبًا</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section
+    id="about"
+    style="
+      max-width:1150px;
+      margin:0 auto;
+      padding:0 20px 70px;
+      text-align:center;
+    "
+  >
+    <div
+      style="
+        background:white;
+        border:1px solid #e8ebf2;
+        border-radius:20px;
+        padding:35px 25px;
+      "
+    >
+      <h2 style="margin-bottom:10px;color:#111827;">
+        عن أدواتي
       </h2>
 
-      <p>
-        مصمم ليكون بسيطًا وسريعًا
+      <p style="color:#667085;max-width:750px;margin:auto;">
+        أدواتي هو موقع عربي يوفر مجموعة من الأدوات المجانية
+        التي تساعدك على إنجاز المهام اليومية بسرعة وسهولة.
       </p>
-
     </div>
+  </section>
 
-
-    <div class="why-grid">
-
-      <div class="why-card">
-
-        <div class="why-icon">
-          ⚡
-        </div>
-
-        <h3>
-          سريع
-        </h3>
-
-        <p>
-          أنجز مهامك بدون خطوات معقدة.
-        </p>
-
-      </div>
-
-
-      <div class="why-card">
-
-        <div class="why-icon">
-          🔒
-        </div>
-
-        <h3>
-          خصوصية أفضل
-        </h3>
-
-        <p>
-          الأدوات التي تعمل داخل المتصفح تعالج الملفات مباشرة على جهازك.
-        </p>
-
-      </div>
-
-
-      <div class="why-card">
-
-        <div class="why-icon">
-          📱
-        </div>
-
-        <h3>
-          يعمل على الهاتف
-        </h3>
-
-        <p>
-          تصميم متجاوب للعمل على الهاتف والكمبيوتر والتابلت.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section class="about" id="about">
-
-  <h2>
-    عن أدواتي
-  </h2>
-
-  <p>
-    أدواتي هو موقع عربي يهدف إلى توفير مجموعة من الأدوات المفيدة
-    التي يمكن استخدامها مباشرة من المتصفح بدون الحاجة إلى تثبيت برامج.
-    نعمل على إضافة أدوات جديدة باستمرار لتغطية المزيد من احتياجات المستخدمين.
-  </p>
-
-</section>
+</main>
 
 
 <footer>
 
   <div class="footer-inner">
 
-    <div class="footer-grid">
-
+    <div class="footer-top">
 
       <div class="footer-brand">
-
-        <h3>
-          أدواتي
-        </h3>
+        <h2>أدواتي</h2>
 
         <p>
           أدوات مجانية أونلاين تساعدك على إنجاز مهامك اليومية
-          بسرعة وسهولة.
+          بسهولة ومن أي جهاز.
         </p>
-
       </div>
 
 
       <div class="footer-col">
+        <h3>أدوات الصور</h3>
 
-        <h4>
-          أدوات الصور
-        </h4>
-
-        <a href="compress-image.html">
-          ضغط الصور
-        </a>
-
-        <a href="resize-image.html">
-          تغيير حجم الصور
-        </a>
-
-        <a href="convert-image.html">
-          تحويل الصور
-        </a>
-
+        <a href="compress-image.html">ضغط الصور</a>
+        <a href="resize-image.html">تغيير حجم الصور</a>
+        <a href="convert-image.html">تحويل الصور</a>
       </div>
 
 
       <div class="footer-col">
+        <h3>أدوات أخرى</h3>
 
-        <h4>
-          أدوات أخرى
-        </h4>
-
-        <a href="merge-pdf.html">
-          دمج PDF
-        </a>
-
-        <a href="split-pdf.html">
-          تقسيم PDF
-        </a>
-
-        <a href="qr-code.html">
-          إنشاء QR Code
-        </a>
-
-        <a href="age-calculator.html">
-          حساب العمر
-        </a>
-
+        <a href="merge-pdf.html">دمج PDF</a>
+        <a href="split-pdf.html">تقسيم PDF</a>
+        <a href="qr-code.html">إنشاء QR Code</a>
+        <a href="age-calculator.html">حساب العمر</a>
+        <a href="percentage-calculator.html">حساب النسبة المئوية</a>
       </div>
 
     </div>
 
 
-    <div class="copyright">
-
-      © 2026 أدواتي — جميع الحقوق محفوظة
-
+    <div class="footer-bottom">
+      © 2026 أدواتي - جميع الحقوق محفوظة
     </div>
 
   </div>
@@ -930,62 +673,47 @@
 
 <script>
 
-  function toggleMenu() {
+function toggleMenu() {
+  document.getElementById("mainNav").classList.toggle("active");
+}
+
+
+function searchTools() {
+
+  const input =
+    document.getElementById("searchInput").value
+    .trim()
+    .toLowerCase();
+
+  const cards =
+    document.querySelectorAll(".tool-card");
+
+  cards.forEach(function(card) {
+
+    const name =
+      (card.getAttribute("data-name") || "")
+      .toLowerCase();
+
+    card.style.display =
+      name.includes(input) ? "" : "none";
+
+  });
+}
+
+
+document.querySelectorAll("nav a").forEach(function(link) {
+
+  link.addEventListener("click", function() {
 
     document
       .getElementById("mainNav")
-      .classList.toggle("active");
+      .classList.remove("active");
 
-  }
+  });
 
-
-  function searchTools() {
-
-    const input =
-      document
-        .getElementById("searchInput")
-        .value
-        .trim()
-        .toLowerCase();
-
-
-    const cards =
-      document.querySelectorAll(".tool-card");
-
-
-    cards.forEach(function(card) {
-
-      const name =
-        (card.getAttribute("data-name") || "")
-          .toLowerCase();
-
-
-      card.style.display =
-        name.includes(input)
-          ? ""
-          : "none";
-
-    });
-
-  }
-
-
-  document
-    .querySelectorAll("nav a")
-    .forEach(function(link) {
-
-      link.addEventListener("click", function() {
-
-        document
-          .getElementById("mainNav")
-          .classList.remove("active");
-
-      });
-
-    });
+});
 
 </script>
 
 </body>
-
 </html>
