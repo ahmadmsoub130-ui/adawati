@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>تقسيم ملفات PDF أونلاين مجانًا | أدواتي</title>
+
+  <meta
+    name="description"
+    content="قسّم ملفات PDF واستخرج الصفحات التي تحتاجها مجانًا مباشرة من المتصفح."
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#5b5ce2">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f6f7fb;
+      color: #202124;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1000px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e8e8ef;
+    }
+
+    .header-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      font-weight: 900;
+      color: #5051d8;
+    }
+
+    .logo-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: #5b5ce2;
+      color: white;
+      display: grid;
+      place-items: center;
+    }
+
+    .back-link {
+      color: #5b5ce2;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 55px 0 80px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .page-title span {
+      color: #5b5ce2;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .page-title h1 {
+      font-size: clamp(30px, 6vw, 48px);
+      margin: 5px 0 10px;
+    }
+
+    .page-title p {
+      color: #707070;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .tool-box {
+      background: white;
+      border: 1px solid #e5e5ec;
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 15px 45px rgba(30, 30, 80, .07);
+    }
+
+    .upload-area {
+      border: 2px dashed #b9b9e8;
+      background: #f7f7ff;
+      border-radius: 20px;
+      padding: 45px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .upload-area:hover {
+      background: #f0f0ff;
+    }
+
+    .upload-icon {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .upload-area h2 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .upload-area p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    #fileInput {
+      display: none;
+    }
+
+    .file-info {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 14px;
+      background: #eeeeff;
+      color: #4e4fcf;
+      text-align: center;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .controls {
+      display: none;
+      margin-top: 25px;
+    }
+
+    .label {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .page-input {
+      width: 100%;
+      border: 1px solid #dddde7;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 16px;
+      outline: none;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .page-input:focus {
+      border-color: #5b5ce2;
+    }
+
+    .help {
+      margin-top: 8px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .button {
+      width: 100%;
+      border: none;
+      background: #5b5ce2;
+      color: white;
+      padding: 14px;
+      border-radius: 13px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 22px;
+    }
+
+    .button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .status {
+      display: none;
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #eeeeff;
+      color: #5152d5;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .result {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background: #f5fff7;
+      border: 1px solid #d7efdc;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .result h3 {
+      margin-bottom: 8px;
+    }
+
+    .result p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .download {
+      display: block;
+      margin-top: 18px;
+      background: #202124;
+      color: white;
+      padding: 14px;
+      border-radius: 13px;
+      font-weight: 800;
+    }
+
+    .info {
+      margin-top: 30px;
+      padding: 22px;
+      background: white;
+      border: 1px solid #e5e5ec;
+      border-radius: 18px;
+    }
+
+    .info h2 {
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #171827;
+      color: #bbb;
+      padding: 25px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+
+      .tool-box {
+        padding: 18px;
+      }
+
+      .upload-area {
+        padding: 35px 15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="container header-inner">
+
+    <a href="index.html" class="logo">
+
+      <span class="logo-icon">
+        أ
+      </span>
+
+      <span>
+        أدواتي
+      </span>
+
+    </a>
+
+    <a href="index.html" class="back-link">
+      ← الرئيسية
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+  <div class="container">
+
+
+    <div class="page-title">
+
+      <span>
+        أداة مجانية
+      </span>
+
+      <h1>
+        تقسيم ملفات PDF
+      </h1>
+
+      <p>
+        استخرج الصفحات التي تحتاجها من ملف PDF
+        واحفظها في ملف جديد.
+      </p>
+
+    </div>
+
+
+
+    <div class="tool-box">
+
+
+      <label
+        class="upload-area"
+        for="fileInput"
+      >
+
+        <div class="upload-icon">
+          📄
+        </div>
+
+        <h2>
+          اختر ملف PDF
+        </h2>
+
+        <p>
+          اختر ملف PDF من جهازك
+        </p>
+
+      </label>
+
+
+      <input
+        type="file"
+        id="fileInput"
+        accept="application/pdf"
+      >
+
+
+      <div
+        class="file-info"
+        id="fileInfo"
+      ></div>
+
+
+      <div
+        class="controls"
+        id="controls"
+      >
+
+        <label
+          class="label"
+          for="pageInput"
+        >
+          الصفحات التي تريد استخراجها
+        </label>
+
+
+        <input
+          type="text"
+          id="pageInput"
+          class="page-input"
+          placeholder="مثال: 1,3,5-7"
+          autocomplete="off"
+        >
+
+
+        <div class="help">
+          أمثلة: 1 — 1,3,5 — 2-5 — 1,3,7-10
+        </div>
+
+
+        <button
+          class="button"
+          id="splitButton"
+          type="button"
+        >
+          تقسيم واستخراج الصفحات
+        </button>
+
+      </div>
+
+
+      <div
+        class="status"
+        id="status"
+      >
+        جاري تجهيز الملف...
+      </div>
+
+
+      <div
+        class="result"
+        id="result"
+      >
+
+        <h3>
+          تم إنشاء ملف PDF الجديد
+        </h3>
+
+        <p id="resultInfo"></p>
+
+
+        <a
+          href="#"
+          id="downloadButton"
+          class="download"
+          download="adawati-split.pdf"
+        >
+          تحميل ملف PDF
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="info">
+
+      <h2>
+        طريقة الاستخدام
+      </h2>
+
+      <p>
+        1. اختر ملف PDF من هاتفك أو جهاز الكمبيوتر.
+      </p>
+
+      <p>
+        2. اكتب أرقام الصفحات التي تريد استخراجها.
+      </p>
+
+      <p>
+        3. استخدم الفاصلة لاختيار صفحات منفصلة،
+        والشرطة لاختيار نطاق صفحات.
+      </p>
+
+      <p>
+        مثال: <strong>1,3,5-8</strong>
+        لاستخراج الصفحات 1 و3 ومن 5 إلى 8.
+      </p>
+
+      <p>
+        تتم معالجة الملف داخل المتصفح.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</main>
+
+
+
+<footer>
+
+  © 2026 أدواتي — جميع الحقوق محفوظة
+
+</footer>
+
+
+
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+
+<script>
+
+  const fileInput =
+    document.getElementById("fileInput");
+
+  const fileInfo =
+    document.getElementById("fileInfo");
+
+  const controls =
+    document.getElementById("controls");
+
+  const pageInput =
+    document.getElementById("pageInput");
+
+  const splitButton =
+    document.getElementById("splitButton");
+
+  const status =
+    document.getElementById("status");
+
+  const result =
+    document.getElementById("result");
+
+  const resultInfo =
+    document.getElementById("resultInfo");
+
+  const downloadButton =
+    document.getElementById("downloadButton");
+
+
+  let selectedFile = null;
+
+  let downloadUrl = null;
+
+
+  function formatBytes(bytes) {
+
+    if (bytes === 0) {
+      return "0 بايت";
+    }
+
+    const units = [
+      "بايت",
+      "KB",
+      "MB",
+      "GB"
+    ];
+
+    const index =
+      Math.floor(
+        Math.log(bytes) /
+        Math.log(1024)
+      );
+
+    const value =
+      bytes /
+      Math.pow(1024, index);
+
+    return (
+      value.toFixed(2) +
+      " " +
+      units[index]
+    );
+
+  }
+
+
+  function parsePages(value, totalPages) {
+
+    const pages = new Set();
+
+    const parts =
+      value
+        .split(",")
+        .map(
+          part => part.trim()
+        )
+        .filter(Boolean);
+
+
+    for (const part of parts) {
+
+      if (part.includes("-")) {
+
+        const range =
+          part.split("-");
+
+        if (range.length !== 2) {
+          throw new Error(
+            "صيغة نطاق الصفحات غير صحيحة."
+          );
+        }
+
+
+        const start =
+          Number(
+            range[0].trim()
+          );
+
+        const end =
+          Number(
+            range[1].trim()
+          );
+
+
+        if (
+          !Number.isInteger(start) ||
+          !Number.isInteger(end) ||
+          start < 1 ||
+          end < 1 ||
+          start > end ||
+          end > totalPages
+        ) {
+
+          throw new Error(
+            "رقم الصفحة خارج النطاق."
+          );
+
+        }
+
+
+        for (
+          let page = start;
+          page <= end;
+          page++
+        ) {
+
+          pages.add(page);
+
+        }
+
+      } else {
+
+        const page =
+          Number(
+            part
+          );
+
+
+        if (
+          !Number.isInteger(page) ||
+          page < 1 ||
+          page > totalPages
+        ) {
+
+          throw new Error(
+            "يوجد رقم صفحة غير صحيح."
+          );
+
+        }
+
+
+        pages.add(page);
+
+      }
+
+    }
+
+
+    return Array.from(pages)
+      .sort(
+        (a, b) => a - b
+      );
+
+  }
+
+
+  fileInput.addEventListener(
+    "change",
+    async function() {
+
+      const file =
+        fileInput.files[0];
+
+
+      if (!file) {
+        return;
+      }
+
+
+      if (
+        file.type !==
+        "application/pdf"
+      ) {
+
+        alert(
+          "يرجى اختيار ملف PDF صحيح."
+        );
+
+        fileInput.value = "";
+
+        return;
+
+      }
+
+
+      selectedFile =
+        file;
+
+
+      fileInfo.textContent =
+        file.name +
+        " — " +
+        formatBytes(file.size);
+
+
+      fileInfo.style.display =
+        "block";
+
+
+      controls.style.display =
+        "block";
+
+
+      result.style.display =
+        "none";
+
+
+      pageInput.value = "";
+
+
+      try {
+
+        const bytes =
+          await file.arrayBuffer();
+
+        const pdf =
+          await PDFLib.PDFDocument.load(
+            bytes,
+            {
+              ignoreEncryption: false
+            }
+          );
+
+
+        const totalPages =
+          pdf.getPageCount();
+
+
+        fileInfo.textContent =
+          file.name +
+          " — " +
+          formatBytes(file.size) +
+          " — عدد الصفحات: " +
+          totalPages;
+
+      } catch (error) {
+
+        fileInfo.textContent =
+          file.name +
+          " — " +
+          formatBytes(file.size);
+
+      }
+
+    }
+  );
+
+
+  splitButton.addEventListener(
+    "click",
+    async function() {
+
+      if (!selectedFile) {
+
+        alert(
+          "اختر ملف PDF أولًا."
+        );
+
+        return;
+
+      }
+
+
+      const pageValue =
+        pageInput.value.trim();
+
+
+      if (!pageValue) {
+
+        alert(
+          "اكتب أرقام الصفحات التي تريد استخراجها."
+        );
+
+        pageInput.focus();
+
+        return;
+
+      }
+
+
+      if (
+        typeof PDFLib ===
+        "undefined"
+      ) {
+
+        alert(
+          "تعذر تحميل أداة PDF. تحقق من اتصال الإنترنت ثم أعد المحاولة."
+        );
+
+        return;
+
+      }
+
+
+      splitButton.disabled =
+        true;
+
+
+      status.style.display =
+        "block";
+
+      status.textContent =
+        "جاري قراءة ملف PDF...";
+
+
+      result.style.display =
+        "none";
+
+
+      try {
+
+        const bytes =
+          await selectedFile.arrayBuffer();
+
+
+        const sourcePdf =
+          await PDFLib.PDFDocument.load(
+            bytes
+          );
+
+
+        const totalPages =
+          sourcePdf.getPageCount();
+
+
+        const pages =
+          parsePages(
+            pageValue,
+            totalPages
+          );
+
+
+        if (
+          pages.length === 0
+        ) {
+
+          throw new Error(
+            "لم يتم تحديد صفحات."
+          );
+
+        }
+
+
+        status.textContent =
+          "جاري استخراج الصفحات...";
+
+
+        const newPdf =
+          await PDFLib.PDFDocument.create();
+
+
+        const pageIndexes =
+          pages.map(
+            page => page - 1
+          );
+
+
+        const copiedPages =
+          await newPdf.copyPages(
+            sourcePdf,
+            pageIndexes
+          );
+
+
+        copiedPages.forEach(
+          page => {
+            newPdf.addPage(page);
+          }
+        );
+
+
+        status.textContent =
+          "جاري إنشاء الملف النهائي...";
+
+
+        const outputBytes =
+          await newPdf.save();
+
+
+        const blob =
+          new Blob(
+            [outputBytes],
+            {
+              type:
+                "application/pdf"
+            }
+          );
+
+
+        if (downloadUrl) {
+
+          URL.revokeObjectURL(
+            downloadUrl
+          );
+
+        }
+
+
+        downloadUrl =
+          URL.createObjectURL(
+            blob
+          );
+
+
+        downloadButton.href =
+          downloadUrl;
+
+
+        resultInfo.textContent =
+          "تم استخراج " +
+          pages.length +
+          " صفحة من أصل " +
+          totalPages +
+          " صفحة — الحجم: " +
+          formatBytes(blob.size);
+
+
+        status.style.display =
+          "none";
+
+
+        result.style.display =
+          "block";
+
+
+      } catch (error) {
+
+        console.error(error);
+
+
+        status.style.display =
+          "none";
+
+
+        alert(
+          error.message ||
+          "تعذر تقسيم ملف PDF. تأكد أن الملف غير تالف أو محمي بكلمة مرور."
+        );
+
+      }
+
+
+      splitButton.disabled =
+        false;
+
+    }
+  );
+
+</script>
+
+
+</body>
+
+</html>
