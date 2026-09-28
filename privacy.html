@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>سياسة الخصوصية | أدواتي</title>
+
+  <meta name="description"
+        content="سياسة الخصوصية لموقع أدواتي والأدوات المجانية التي يقدمها.">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.9;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e8ebf2;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: #2563eb;
+      font-size: 27px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+    }
+
+    nav a {
+      padding: 9px 14px;
+      border-radius: 10px;
+      color: #4b5563;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 23px;
+      width: 44px;
+      height: 42px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 55px 20px 80px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 7px 15px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 38px;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      color: #667085;
+    }
+
+    .content {
+      background: white;
+      border: 1px solid #e8ebf2;
+      border-radius: 22px;
+      padding: 35px;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .content section {
+      margin-bottom: 30px;
+    }
+
+    .content section:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      color: #111827;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-right: 25px;
+      color: #4b5563;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+    .notice {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 17px;
+      color: #1e40af;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .footer-inner a {
+      color: #93c5fd;
+      font-weight: 700;
+    }
+
+    @media (max-width: 650px) {
+
+      .header-inner {
+        padding: 13px 15px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+
+        position: absolute;
+        top: 68px;
+        right: 12px;
+        left: 12px;
+
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 15px;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        text-align: center;
+      }
+
+      main {
+        padding: 40px 15px 60px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .content {
+        padding: 23px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<header>
+
+  <div class="header-inner">
+
+    <a href="index.html" class="logo">
+      أدواتي
+    </a>
+
+    <button class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="فتح القائمة">
+      ☰
+    </button>
+
+    <nav id="mainNav">
+
+      <a href="index.html">
+        الرئيسية
+      </a>
+
+      <a href="index.html#tools">
+        الأدوات
+      </a>
+
+      <a href="index.html#about">
+        عن الموقع
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <div class="page-header">
+
+    <span class="badge">
+      الخصوصية
+    </span>
+
+    <h1>
+      سياسة الخصوصية
+    </h1>
+
+    <p>
+      توضح هذه الصفحة كيفية تعامل موقع أدواتي مع المعلومات والبيانات.
+    </p>
+
+  </div>
+
+
+  <article class="content">
+
+
+    <section>
+
+      <h2>
+        1. مقدمة
+      </h2>
+
+      <p>
+        مرحبًا بك في موقع أدواتي. نحن نحترم خصوصية زوار الموقع
+        ونحرص على توضيح كيفية التعامل مع المعلومات أثناء استخدام
+        خدمات وأدوات الموقع.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        2. استخدام الأدوات
+      </h2>
+
+      <p>
+        تم تصميم عدد من أدوات الموقع لمعالجة الملفات والبيانات
+        مباشرة داخل متصفح المستخدم.
+      </p>
+
+      <p>
+        عندما تكون الأداة مصممة للعمل محليًا داخل المتصفح،
+        لا يحتاج المستخدم إلى إرسال الملف إلى خادم الموقع
+        حتى تتم عملية المعالجة.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        3. المعلومات التي قد يتم جمعها
+      </h2>
+
+      <p>
+        قد يتم جمع بعض المعلومات التقنية العامة تلقائيًا عند زيارة
+        الموقع، مثل:
+      </p>
+
+      <ul>
+
+        <li>
+          نوع الجهاز والمتصفح.
+        </li>
+
+        <li>
+          نظام التشغيل.
+        </li>
+
+        <li>
+          الصفحات التي تمت زيارتها.
+        </li>
+
+        <li>
+          معلومات عامة مرتبطة باستخدام الموقع.
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        4. ملفات تعريف الارتباط
+      </h2>
+
+      <p>
+        قد يستخدم موقع أدواتي ملفات تعريف الارتباط
+        (Cookies) لتحسين تجربة المستخدم، وتحليل استخدام الموقع،
+        وتشغيل بعض الخدمات.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        5. الإعلانات
+      </h2>
+
+      <p>
+        قد يعرض الموقع إعلانات من جهات خارجية في المستقبل.
+        قد تستخدم هذه الجهات تقنيات مثل ملفات تعريف الارتباط
+        لتقديم إعلانات أو قياس أداء الإعلانات.
+      </p>
+
+      <p>
+        عند تفعيل خدمات إعلانية مثل Google AdSense،
+        قد تنطبق سياسات الخصوصية الخاصة بمزود الخدمة
+        بالإضافة إلى سياسة الخصوصية هذه.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        6. الروابط الخارجية
+      </h2>
+
+      <p>
+        قد يحتوي الموقع على روابط لخدمات أو مواقع خارجية.
+        لا يتحمل موقع أدواتي مسؤولية ممارسات الخصوصية
+        أو محتوى المواقع الخارجية.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        7. حماية المعلومات
+      </h2>
+
+      <p>
+        نعمل على استخدام وسائل مناسبة للمحافظة على أمن الموقع
+        وحماية المعلومات التي يتم التعامل معها من خلال خدماته.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        8. خصوصية الأطفال
+      </h2>
+
+      <p>
+        الموقع مخصص للأدوات والخدمات العامة ولا يطلب من المستخدمين
+        تقديم معلومات شخصية حساسة لاستخدام الأدوات الأساسية.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        9. تحديث سياسة الخصوصية
+      </h2>
+
+      <p>
+        قد يتم تحديث سياسة الخصوصية من وقت لآخر عند إضافة خدمات
+        أو أدوات جديدة أو عند تغيير طريقة تشغيل الموقع.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        10. التواصل
+      </h2>
+
+      <p>
+        إذا كان لديك سؤال يتعلق بسياسة الخصوصية أو طريقة استخدام
+        المعلومات، يمكنك التواصل مع إدارة الموقع.
+      </p>
+
+      <p>
+        البريد الإلكتروني:
+        <strong>ahmadmsoub130@gmail.com</strong>
+      </p>
+
+    </section>
+
+
+    <div class="notice">
+
+      آخر تحديث:
+      سبتمبر 2026
+
+    </div>
+
+
+  </article>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div>
+      © 2026 أدواتي - جميع الحقوق محفوظة
+    </div>
+
+    <div style="margin-top:8px;">
+
+      <a href="index.html">
+        العودة إلى الصفحة الرئيسية
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+  document
+    .getElementById("mainNav")
+    .classList.toggle("active");
+
+}
+
+</script>
+
+</body>
+
+</html>
