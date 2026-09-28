@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>أدواتي | أدوات مجانية أونلاين</title>
+
+  <meta
+    name="description"
+    content="أدواتي - مجموعة مجانية من الأدوات المفيدة للصور وPDF والحسابات والتحويلات، تعمل مباشرة من المتصفح."
+  >
+
+  <meta
+    name="keywords"
+    content="أدوات مجانية, أدوات أونلاين, ضغط الصور, PDF, حاسبة, QR Code, تحويل الوحدات"
+  >
+
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#5b5ce2">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f6f7fb;
+      color: #202124;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e9e9ef;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      font-weight: 800;
+      color: #4d4fd7;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: #5b5ce2;
+      color: white;
+      font-size: 21px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #555;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #5b5ce2;
+    }
+
+    .menu-btn {
+      display: none;
+      border: none;
+      background: #f0f0ff;
+      color: #4d4fd7;
+      width: 43px;
+      height: 43px;
+      border-radius: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 75px 0 55px;
+      background:
+        radial-gradient(circle at 10% 20%, #e4e4ff 0, transparent 28%),
+        radial-gradient(circle at 90% 30%, #e8f5ff 0, transparent 28%),
+        #ffffff;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 30px;
+      background: #eeeeff;
+      color: #4d4fd7;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #5b5ce2;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .search-box {
+      background: white;
+      border: 1px solid #e3e3ea;
+      border-radius: 16px;
+      padding: 7px;
+      display: flex;
+      max-width: 650px;
+      box-shadow: 0 12px 35px rgba(30, 30, 80, .08);
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 14px;
+      font-size: 16px;
+      background: transparent;
+    }
+
+    .search-box button {
+      border: none;
+      background: #5b5ce2;
+      color: white;
+      border-radius: 12px;
+      padding: 0 24px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hero-card {
+      min-height: 330px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #5b5ce2, #7a65ed);
+      color: white;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(91, 92, 226, .25);
+    }
+
+    .hero-card::before,
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+    }
+
+    .hero-card::before {
+      width: 180px;
+      height: 180px;
+      top: -60px;
+      right: -50px;
+    }
+
+    .hero-card::after {
+      width: 220px;
+      height: 220px;
+      bottom: -100px;
+      left: -60px;
+    }
+
+    .hero-symbol {
+      font-size: 100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title span {
+      color: #5b5ce2;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin: 5px 0 8px;
+    }
+
+    .section-title p {
+      color: #777;
+    }
+
+    /* TOOLS */
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tool-card {
+      background: white;
+      border: 1px solid #e8e8ef;
+      border-radius: 20px;
+      padding: 25px;
+      transition: .2s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(30,30,80,.09);
+    }
+
+    .tool-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      background: #eeeeff;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .tool-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .tool-card p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .tool-link {
+      color: #5b5ce2;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* WHY */
+
+    .why {
+      background: white;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .why-card {
+      text-align: center;
+      padding: 25px;
+    }
+
+    .why-icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .why-card h3 {
+      margin-bottom: 7px;
+    }
+
+    .why-card p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta-box {
+      background: linear-gradient(135deg, #5051d8, #7661e9);
+      border-radius: 28px;
+      padding: 55px 35px;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-box h2 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      opacity: .9;
+      margin-bottom: 25px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: #5051d8;
+      padding: 13px 25px;
+      border-radius: 12px;
+      font-weight: 800;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #171827;
+      color: white;
+      padding: 45px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #b8b8c8;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin: 7px 0;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #303142;
+      padding-top: 18px;
+      text-align: center;
+      color: #999;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        right: 4%;
+        left: 4%;
+        background: white;
+        border: 1px solid #e5e5ed;
+        border-radius: 15px;
+        padding: 15px;
+        flex-direction: column;
+        align-items: stretch;
+        box-shadow: 0 15px 35px rgba(0,0,0,.08);
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 10px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 230px;
+      }
+
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .search-box {
+        flex-direction: column;
+        padding: 7px;
+      }
+
+      .search-box button {
+        padding: 13px;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+
+    <a href="index.html" class="logo">
+      <span class="logo-icon">أ</span>
+      <span>أدواتي</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" type="button">
+      ☰
+    </button>
+
+    <nav id="mainNav">
+      <a href="#tools">الأدوات</a>
+      <a href="#why">لماذا أدواتي؟</a>
+      <a href="#about">عن الموقع</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <span class="badge">
+          أدوات مجانية وسهلة
+        </span>
+
+        <h1>
+          كل الأدوات التي تحتاجها
+          <span>في مكان واحد</span>
+        </h1>
+
+        <p>
+          استخدم أدوات مفيدة للصور وملفات PDF
+          والحسابات والتحويلات مباشرة من المتصفح.
+        </p>
+
+        <div class="search-box">
+
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="ابحث عن أداة..."
+            aria-label="البحث عن أداة"
+          >
+
+          <button type="button" id="searchBtn">
+            بحث
+          </button>
+
+        </div>
+
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-symbol">
+          🛠️
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="tools">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>أدواتنا</span>
+
+        <h2>
+          اختر الأداة التي تحتاجها
+        </h2>
+
+        <p>
+          مجموعة من الأدوات المجانية وسهلة الاستخدام.
+        </p>
+
+      </div>
+
+
+      <div class="tools-grid" id="toolsGrid">
+
+
+        <a href="#" class="tool-card" data-name="ضغط الصور">
+
+          <div class="tool-icon">🖼️</div>
+
+          <h3>ضغط الصور</h3>
+
+          <p>
+            تقليل حجم الصور مع الحفاظ على جودة مناسبة.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+        <a href="#" class="tool-card" data-name="تغيير حجم الصور">
+
+          <div class="tool-icon">📐</div>
+
+          <h3>تغيير حجم الصور</h3>
+
+          <p>
+            غيّر أبعاد الصورة بسهولة من هاتفك أو الكمبيوتر.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+        <a href="#" class="tool-card" data-name="تحويل الصور">
+
+          <div class="tool-icon">🔄</div>
+
+          <h3>تحويل الصور</h3>
+
+          <p>
+            تحويل الصور بين الصيغ المختلفة.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+        <a href="#" class="tool-card" data-name="دمج PDF">
+
+          <div class="tool-icon">📄</div>
+
+          <h3>دمج PDF</h3>
+
+          <p>
+            دمج عدة ملفات PDF في ملف واحد.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+        <a href="#" class="tool-card" data-name="تقسيم PDF">
+
+          <div class="tool-icon">✂️</div>
+
+          <h3>تقسيم PDF</h3>
+
+          <p>
+            استخراج صفحات محددة من ملفات PDF.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+        <a href="#" class="tool-card" data-name="QR Code">
+
+          <div class="tool-icon">🔳</div>
+
+          <h3>إنشاء QR Code</h3>
+
+          <p>
+            أنشئ رمز QR بسرعة للنصوص والروابط.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+        <a href="#" class="tool-card" data-name="حاسبة العمر">
+
+          <div class="tool-icon">🎂</div>
+
+          <h3>حاسبة العمر</h3>
+
+          <p>
+            احسب عمرك بالسنوات والأشهر والأيام.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+        <a href="#" class="tool-card" data-name="حاسبة النسبة المئوية">
+
+          <div class="tool-icon">%</div>
+
+          <h3>حاسبة النسبة المئوية</h3>
+
+          <p>
+            احسب النسب المئوية بسرعة وسهولة.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+        <a href="#" class="tool-card" data-name="تحويل الوحدات">
+
+          <div class="tool-icon">📏</div>
+
+          <h3>تحويل الوحدات</h3>
+
+          <p>
+            تحويل الطول والوزن والحرارة وغيرها.
+          </p>
+
+          <span class="tool-link">
+            فتح الأداة ←
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="why" id="why">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>ببساطة</span>
+
+        <h2>
+          لماذا أدواتي؟
+        </h2>
+
+      </div>
+
+
+      <div class="why-grid">
+
+        <div class="why-card">
+
+          <div class="why-icon">⚡</div>
+
+          <h3>سريع</h3>
+
+          <p>
+            أدوات مصممة لتكون سهلة وسريعة الاستخدام.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <div class="why-icon">📱</div>
+
+          <h3>يعمل على الهاتف</h3>
+
+          <p>
+            تصميم متجاوب يناسب الهاتف والكمبيوتر.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <div class="why-icon">🔒</div>
+
+          <h3>خصوصية أفضل</h3>
+
+          <p>
+            الأدوات التي يمكن تشغيلها داخل المتصفح
+            سنبقيها معالجة محليًا قدر الإمكان.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="cta-box">
+
+        <h2>
+          أدوات مفيدة بدون تعقيد
+        </h2>
+
+        <p>
+          نعمل على إضافة أدوات جديدة باستمرار.
+        </p>
+
+        <a href="#tools" class="cta-button">
+          تصفح الأدوات
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>أدواتي</h3>
+
+        <p>
+          موقع عربي يوفر أدوات مجانية ومفيدة
+          تعمل مباشرة من المتصفح.
+        </p>
+      </div>
+
+
+      <div>
+
+        <h3>الأدوات</h3>
+
+        <a href="#tools">ضغط الصور</a>
+        <a href="#tools">أدوات PDF</a>
+        <a href="#tools">الحاسبات</a>
+
+      </div>
+
+
+      <div>
+
+        <h3>الموقع</h3>
+
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">الشروط والأحكام</a>
+        <a href="#">تواصل معنا</a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 أدواتي — جميع الحقوق محفوظة
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mainNav = document.getElementById("mainNav");
+
+  menuBtn.addEventListener("click", function () {
+    mainNav.classList.toggle("active");
+  });
+
+
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+  const cards = document.querySelectorAll(".tool-card");
+
+  function searchTools() {
+
+    const value = searchInput.value.trim().toLowerCase();
+
+    cards.forEach(function(card) {
+
+      const name = card.dataset.name.toLowerCase();
+
+      if (value === "" || name.includes(value)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+
+    });
+
+    document.getElementById("tools").scrollIntoView({
+      behavior: "smooth"
+    });
+
+  }
+
+  searchBtn.addEventListener("click", searchTools);
+
+  searchInput.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+      searchTools();
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
